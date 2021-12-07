@@ -8,3 +8,6 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+analyse/Billetterie/.runtime/projectInfo.html
+analyse/Planning des matchs tpldrk/.runtime/projectInfo.html
+
