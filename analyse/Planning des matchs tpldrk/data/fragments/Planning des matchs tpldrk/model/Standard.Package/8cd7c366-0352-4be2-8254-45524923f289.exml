@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="planning des matchs tpldrk" version="4">
+  <OBJECT>
+    <ID name="planning des matchs tpldrk" mc="Standard.Package" uid="8cd7c366-0352-4be2-8254-45524923f289"/>
+    <PID name="Planning des matchs tpldrk" mc="Standard.Project" uid="395649af-9198-4894-b7ba-763d0fc1c33e"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[planning des matchs tpldrk]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Court" mc="Standard.Class" uid="c1b73e56-a2b3-4e84-a128-ae5f05b80783"/>
+        <COMPID name="Arbitrator" mc="Standard.Class" uid="a67a7358-82dc-4552-b043-fd2a6f6db4a5"/>
+        <COMPID name="Match" mc="Standard.Class" uid="b6d51771-b24b-4f90-be4e-b33127bbca91"/>
+        <COMPID name="Player" mc="Standard.Class" uid="9bfbdbf8-67f0-4b7a-9e3e-789e9c7dbead"/>
+        <COMPID name="BallBoy" mc="Standard.Class" uid="733ac162-dede-4e7f-a728-8f00b2416ea1"/>
+        <COMPID name="Booking" mc="Standard.Class" uid="c9f7e927-4b31-439b-a968-b37dbc39bea9"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Diagramme de classe planning des matchs tpldrk" mc="Standard.ClassDiagram" uid="f3a7a6e0-4190-447d-9a20-4dc98b23dc4f"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

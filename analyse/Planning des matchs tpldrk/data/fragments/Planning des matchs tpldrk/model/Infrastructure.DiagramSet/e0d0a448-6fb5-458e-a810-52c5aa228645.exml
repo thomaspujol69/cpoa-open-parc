@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Planning des matchs tpldrk" version="4">
+  <OBJECT>
+    <ID name="Planning des matchs tpldrk" mc="Infrastructure.DiagramSet" uid="e0d0a448-6fb5-458e-a810-52c5aa228645"/>
+    <PID name="Planning des matchs tpldrk" mc="Standard.Project" uid="395649af-9198-4894-b7ba-763d0fc1c33e"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[Planning des matchs tpldrk]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>
