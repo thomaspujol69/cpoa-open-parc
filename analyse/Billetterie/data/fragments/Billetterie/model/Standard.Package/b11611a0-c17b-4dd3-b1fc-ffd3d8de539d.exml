@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="billetterie" version="4">
+  <OBJECT>
+    <ID name="billetterie" mc="Standard.Package" uid="b11611a0-c17b-4dd3-b1fc-ffd3d8de539d"/>
+    <PID name="Billetterie" mc="Standard.Project" uid="ff45e787-6d1b-4029-851d-aab1158f00f6"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[billetterie]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="User" mc="Standard.Class" uid="01cad163-5d92-4d52-b813-8505c169e909"/>
+        <COMPID name="Match" mc="Standard.Class" uid="be482d8a-b289-4049-a6e8-0688825c4335"/>
+        <COMPID name="Ticket" mc="Standard.Class" uid="5a65d3ba-2981-44c7-87c7-c3db7bb57da9"/>
+        <COMPID name="TicketType" mc="Standard.Class" uid="2edae152-3f29-48fa-979c-8fc59a058f24"/>
+        <COMPID name="PromoCode" mc="Standard.Class" uid="e049c925-015b-4dbe-9f36-8eb119650c1e"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Diagramme de classe billetterie" mc="Standard.ClassDiagram" uid="03980c76-230c-4fcd-bc63-17d973148f05"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
