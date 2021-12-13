@@ -58,7 +58,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="nbDoubleMatch" mc="Standard.Attribute" uid="537a191b-5303-4944-b510-004f49d24e97"/>
+          <ID name="nbDoubleMatchs" mc="Standard.Attribute" uid="537a191b-5303-4944-b510-004f49d24e97"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
             <ATT name="Value"></ATT>
@@ -72,7 +72,7 @@
             <ATT name="Visibility">Public</ATT>
             <ATT name="IsClass">false</ATT>
             <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[nbDoubleMatch]]></ATT>
+            <ATT name="Name"><![CDATA[nbDoubleMatchs]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>

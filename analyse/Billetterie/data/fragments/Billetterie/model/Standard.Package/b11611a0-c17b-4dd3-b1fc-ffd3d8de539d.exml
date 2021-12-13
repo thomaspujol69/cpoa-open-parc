@@ -19,9 +19,12 @@
         <COMPID name="Ticket" mc="Standard.Class" uid="5a65d3ba-2981-44c7-87c7-c3db7bb57da9"/>
         <COMPID name="TicketType" mc="Standard.Class" uid="2edae152-3f29-48fa-979c-8fc59a058f24"/>
         <COMPID name="PromoCode" mc="Standard.Class" uid="e049c925-015b-4dbe-9f36-8eb119650c1e"/>
+        <COMPID name="User" mc="Standard.Actor" uid="75445735-81fd-4c67-8545-bbb88c27f94d"/>
+        <COMPID name=" Acheter un ticket" mc="Standard.UseCase" uid="8ff3b9b1-7495-4e4a-9ba2-214e6f8ad35c"/>
       </COMP>
       <COMP relation="Product">
         <COMPID name="Diagramme de classe billetterie" mc="Standard.ClassDiagram" uid="03980c76-230c-4fcd-bc63-17d973148f05"/>
+        <COMPID name="Diagramme de cas d'utilisation billeterie" mc="Standard.UseCaseDiagram" uid="0edf3e27-180f-4e1f-859b-680fdb05091f"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>
