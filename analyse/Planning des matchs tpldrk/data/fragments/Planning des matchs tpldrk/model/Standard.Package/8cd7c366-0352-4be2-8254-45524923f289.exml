@@ -20,6 +20,9 @@
         <COMPID name="Player" mc="Standard.Class" uid="9bfbdbf8-67f0-4b7a-9e3e-789e9c7dbead"/>
         <COMPID name="BallBoy" mc="Standard.Class" uid="733ac162-dede-4e7f-a728-8f00b2416ea1"/>
         <COMPID name="Booking" mc="Standard.Class" uid="c9f7e927-4b31-439b-a968-b37dbc39bea9"/>
+        <COMPID name="MatchDouble" mc="Standard.Class" uid="088e1ed1-9550-4f05-a866-4ac738092ec1"/>
+        <COMPID name="Team" mc="Standard.Class" uid="3807b8a4-b571-4510-9e7f-4a9a141ee817"/>
+        <COMPID name="MatchSimple" mc="Standard.Class" uid="48322874-cfa8-4d0a-ad9d-482223b5a969"/>
       </COMP>
       <COMP relation="Product">
         <COMPID name="Diagramme de classe planning des matchs tpldrk" mc="Standard.ClassDiagram" uid="f3a7a6e0-4190-447d-9a20-4dc98b23dc4f"/>
