@@ -197,6 +197,9 @@
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
     },
+    "symfony/password-hasher": {
+        "version": "v6.0.1"
+    },
     "symfony/polyfill-intl-grapheme": {
         "version": "v1.23.1"
     },
@@ -208,6 +211,12 @@
     },
     "symfony/polyfill-php81": {
         "version": "v1.23.0"
+    },
+    "symfony/property-access": {
+        "version": "v6.0.0"
+    },
+    "symfony/property-info": {
+        "version": "v6.0.0"
     },
     "symfony/proxy-manager-bridge": {
         "version": "v6.0.0"
@@ -228,6 +237,27 @@
     "symfony/runtime": {
         "version": "v6.0.0"
     },
+    "symfony/security-bundle": {
+        "version": "6.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.3",
+            "ref": "3307d76caa2d12fb10ade57975beb3d8975df396"
+        },
+        "files": [
+            "./config/packages/security.yaml"
+        ]
+    },
+    "symfony/security-core": {
+        "version": "v6.0.1"
+    },
+    "symfony/security-csrf": {
+        "version": "v6.0.1"
+    },
+    "symfony/security-http": {
+        "version": "v6.0.1"
+    },
     "symfony/service-contracts": {
         "version": "v3.0.0"
     },
@@ -237,6 +267,25 @@
     "symfony/string": {
         "version": "v6.0.0"
     },
+    "symfony/translation-contracts": {
+        "version": "v3.0.0"
+    },
+    "symfony/twig-bridge": {
+        "version": "v6.0.1"
+    },
+    "symfony/twig-bundle": {
+        "version": "6.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.4",
+            "ref": "bffbb8f1a849736e64006735afae730cb428b6ff"
+        },
+        "files": [
+            "./config/packages/twig.yaml",
+            "./templates/base.html.twig"
+        ]
+    },
     "symfony/var-dumper": {
         "version": "v6.0.0"
     },
@@ -245,5 +294,11 @@
     },
     "symfony/yaml": {
         "version": "v6.0.0"
+    },
+    "twig/extra-bundle": {
+        "version": "v3.3.4"
+    },
+    "twig/twig": {
+        "version": "v3.3.4"
     }
 }
