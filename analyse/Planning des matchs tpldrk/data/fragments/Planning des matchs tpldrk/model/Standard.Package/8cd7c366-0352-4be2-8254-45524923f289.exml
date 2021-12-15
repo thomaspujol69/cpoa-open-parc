@@ -23,9 +23,17 @@
         <COMPID name="MatchDouble" mc="Standard.Class" uid="088e1ed1-9550-4f05-a866-4ac738092ec1"/>
         <COMPID name="Team" mc="Standard.Class" uid="3807b8a4-b571-4510-9e7f-4a9a141ee817"/>
         <COMPID name="MatchSimple" mc="Standard.Class" uid="48322874-cfa8-4d0a-ad9d-482223b5a969"/>
+        <COMPID name="Admin" mc="Standard.Actor" uid="25e1cc13-4bdb-4b27-a994-6cb1a07d26f7"/>
+        <COMPID name="Répartir arbitres" mc="Standard.UseCase" uid="91ebff5f-cd1f-4dd1-b7c8-72be289399b7"/>
+        <COMPID name="Affecter les courts" mc="Standard.UseCase" uid="bd84480e-990c-4397-9b02-b15607e91ef8"/>
+        <COMPID name="Gérer les réservations de créneaux pour les entrainements" mc="Standard.UseCase" uid="a141c86e-37eb-4bc3-8e01-a852ea296755"/>
+        <COMPID name="Répartir les ramasseurs de boules" mc="Standard.UseCase" uid="55518a84-3099-49e2-a98d-93376d2145c1"/>
+        <COMPID name="Réserver une séance d'entrainement" mc="Standard.UseCase" uid="9bad228f-d0c7-46db-8c30-f0ade299ec50"/>
+        <COMPID name="Joueur" mc="Standard.Actor" uid="42f339f7-917d-4848-94bc-2fe694a7aa4d"/>
       </COMP>
       <COMP relation="Product">
         <COMPID name="Diagramme de classe planning des matchs tpldrk" mc="Standard.ClassDiagram" uid="f3a7a6e0-4190-447d-9a20-4dc98b23dc4f"/>
+        <COMPID name="Diagramme de cas d'utilisation planning matchs" mc="Standard.UseCaseDiagram" uid="e587026e-f3e0-47f5-9dcc-a0ce00e111a3"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>
