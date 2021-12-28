@@ -11,3 +11,10 @@
 analyse/Billetterie/.runtime/projectInfo.html
 analyse/Planning des matchs tpldrk/.runtime/projectInfo.html
 
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###
