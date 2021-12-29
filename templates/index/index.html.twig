@@ -5,15 +5,60 @@
 {% block body %}
 {% include 'common/header.html' %}
 
-<div class="content">
-    <div class="separator">
-        <div>
-            <span></span>
-            <h4>#OpenParc</h4>
-            <span></span>
+<div class="first-container">
+    <div class="row">
+        <div class="col-md lightprimary">
+            <div class="text-center mx-auto pt-5 pb-5">
+                <h5>La billeterie est ouverte !</h5>
+                <h5>Retrouvez les matchs de vos joueurs favoris au long d’une semaine de folie !</h5>
+                <h5>Pour commander vos places, c’est par ici :</h5>
+                <br>
+                <a class="btn btn-primary" href="#">Billeterie</a>
+            </div>
+        </div>
+        <div class="col-md lightprimary pt-4 pb-4">
+            <!--<iframe style="border:none; width:100%; margin:0 auto; display:block;" height="500px" allowfullscreen src="https://www.embed-leaflet.com/map?center=45.782143,4.855942&zoom=17&style=&marker=true&popup=true&title=Vélodrome Georges Prévéral&enhancedScroll=true"></iframe>-->
+            <div id="map"></div> 
+            <script>
+                var map = L.map('map').setView([45.781275, 4.855616], 16);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map);
+            </script>
         </div>
     </div>
-</div>    
+</div>
+
+<div class="container ">
+    <div class="row">
+        <div class="col-md lightprimary">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic provident rerum vel ullam aspernatur dolorem dolore dicta iure, delectus voluptatem blanditiis assumenda laudantium exercitationem molestiae necessitatibus doloribus iste! Nesciunt, consectetur.</p>
+        </div>
+        <div class="col-md lightprimary">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat possimus voluptates itaque in, accusamus eveniet odit neque sed! Optio eveniet illum quidem nihil quod, magnam excepturi distinctio neque accusamus quo.</p>
+        </div>
+    </div>
+</div>
+
+<div class="separator">
+    <div>
+        <span></span>
+        <h4>#OpenParc</h4>
+        <span></span>
+    </div>
+</div>
+<div class="container ">
+    {% if APP_ENV != 'dev'%}
+        <div class="taggbox-container" style="width:100%;height:100%;overflow: auto;"><div class="taggbox-socialwall" data-wall-id="80822" view-url="https://widget.taggbox.com/80822"></div><script src="https://widget.taggbox.com/embed.min.js" type="text/javascript"></script></div>
+    {% else %}
+        <h3>
+            <code>
+            Affichage du feed twitter suspendu, l'environnement étant 
+            celui de développement.
+            </code>
+        <h3>
+    {% endif %}
+</div>
+
+
 
 {% include 'common/footer.html' %}
 {% endblock %}

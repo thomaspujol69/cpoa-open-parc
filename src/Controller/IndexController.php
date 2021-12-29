@@ -11,10 +11,10 @@ class IndexController extends AbstractController
     #[Route('/', name: 'index')]
     public function index(): Response
     {
-        $liste = array('pizzas','Ana','spaghettis carbo','pâtes au saumon','blanquette de veau','escalope de dinde à la crème et aux champignons','Thomas','raclette');
-        return $this->render('index/index.html.twig', [
-            'controller_name' => 'Banane',
-            'liste' => $liste[array_Rand($liste)],
+        $r = $this->render('index/index.html.twig', [
+            
         ]);
+
+        return $r;
     }
 }
