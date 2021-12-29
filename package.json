@@ -23,5 +23,8 @@
         "watch": "encore dev --watch",
         "build": "encore production --progress",
         "heroku-postbuild": "encore prod"
+    },
+    "dependencies": {
+        "webpack": "^5.65.0"
     }
 }
