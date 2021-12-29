@@ -1,3 +1,46 @@
-$primary: darken(#d48d1d, 20%);
+$darkprimary: #a1752d;
+$primary: #d48d1d;
+$lightprimary: #ebba6c;
 
+.navbar{
+    .navbar-brand{
+        margin-right: 2rem;
+        margin-left: 2rem;
+    }
+    .nav-item, .dropdown-item{
+        transition-duration: 0.3s;
+    }
+    .nav-item:hover{
+        background-color: $lightprimary;
+        border-radius: 7px;
+    }
+    .disabled{
+        background-color: inherit;
+        border-radius: inherit;
+    }
+}
+
+.separator {
+    display:block;
+    margin:auto;
+    text-align: center;
+}
+.separator h4{
+    display:inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.separator span{
+    display: inline-block;
+    width:calc(50% - calc(155px / 2));
+    background-color: #444444;
+    border: 2px solid #444444;
+    vertical-align: middle;
+    border-radius: 2px;
+}
+
+
+
+
+@import "./bootstrap.min.css";
 @import "~bootstrap/scss/bootstrap";
