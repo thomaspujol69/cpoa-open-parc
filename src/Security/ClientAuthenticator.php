@@ -50,12 +50,25 @@ class ClientAuthenticator extends AbstractLoginFormAuthenticator
         }
 
         // For example:
-        return new RedirectResponse($this->urlGenerator->generate('index')); // On renvoie à l'index après registering 
+        $tpath = $request->query->get('_target_path');
+        print($tpath);
+        return new RedirectResponse($this->urlGenerator->generate(($tpath!=null) ? $tpath : 'index')); // On renvoie à l'index après registering 
         //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
     protected function getLoginUrl(Request $request): string
     {
         return $this->urlGenerator->generate(self::LOGIN_ROUTE);
+        /*
+        $tpath = $request->query->get('_target_path');
+        $tpath = ($tpath!=null) ? $tpath : '/';
+        $toGo = $this->urlGenerator->generate(self::LOGIN_ROUTE);
+        if (strpos($toGo, '?') !== false){ // Ne contient pas 
+            $toGo .= "?_target_path=".$tpath; 
+        }else{
+            $toGo .= "&_target_path=".$tpath; 
+        }
+        return $toGo;
+        */
     }
 }
