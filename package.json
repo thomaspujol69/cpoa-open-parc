@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "encore": "^0.0.30-beta",
-        "webpack": "^5.65.0"
+        "webpack": "^5.65.0",
+        "yarn": "^1.22.17"
     }
 }
