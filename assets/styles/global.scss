@@ -10,12 +10,22 @@ body{
 
 .first-container{
     @extend .container;
-    margin-left : 1% !important;
-    margin-right : 1% !important;
+}
+
+.container {
+    margin-left : 0% !important;
+    margin-right : 0% !important;
+    max-width: 100% !important;
 }
 
 .lightprimary{
     background-color: $lightprimary !important;
+}
+
+.border {
+    color : black;
+    border: 1px white;
+    background-color : $verylightprimary;
 }
 
 .navbar{
@@ -86,9 +96,8 @@ body{
 }
 
 .center {
-    text-align: center !important;
+    margin : auto;
 }
-
 
 @import "./bootstrap.min.css";
 @import "~bootstrap/scss/bootstrap";

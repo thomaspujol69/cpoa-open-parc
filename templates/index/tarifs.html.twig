@@ -8,22 +8,31 @@
 <div class="first-container">
     <div class="row">
         <div class="col-md lightprimary">
-            <div class="text-center mx-auto pt-5 pb-5">
-                <h5>Tarifs</h5>
-                <div class='center'>
-                    <table>
+            <div class="text-center mx-auto pt-4 pb-5">
+                <h5>T A R I F</h5>
+                <table class='center'>
+                    <tr>
                         <td class='bloc bleu'></td>
                         <td class='bloc bleu'>Catégorie 1</td>
                         <td class='bloc bleu'>Catégorie 2</td>
-                    </table>
+                    </tr>
                     {% for item in tarifs %}
-                        <table>
+                        <tr>
                             <td class='bloc bleu'>{{item.jour}}</td>
                             <td class='bloc orange'>{{item.cat1}}</td>
                             <td class='bloc orange'>{{item.cat2}}</td>
-                        </table>
+                        </tr>
                     {% endfor %}
-                </div>
+                </table>
+            </div>
+        </div>
+        <div class="col-md pt-5 lightprimary">
+            <div class="text-center pt-5 pb-5 border">
+                <h5>La billeterie est ouverte !</h5>
+                <h5>Retrouvez les matchs de vos joueurs favoris au long d’une semaine de folie !</h5>
+                <h5>Pour commander vos places, c’est par ici :</h5>
+                <br>
+                <a class="btn btn-primary" href="#">BILLETERIE</a>
             </div>
         </div>
     </div>
