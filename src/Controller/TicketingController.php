@@ -12,8 +12,9 @@ class TicketingController extends AbstractController
     public function index(): Response
     {
         $user = $this->getUser();
+        print_r($user);
         if (!$user){
-            return $this->redirectToRoute('app_login');
+            return $this->redirectToRoute('app_login', array('_target_path' => 'ticketing'));
         }
         
         return $this->render('ticketing/index.html.twig', [
