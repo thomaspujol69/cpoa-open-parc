@@ -5,10 +5,13 @@ $verylightprimary: #ebba6c;
 
 body{
     background-color: $background !important;
+    color : white !important;
 }
 
 .first-container{
     @extend .container;
+    margin-left : 1% !important;
+    margin-right : 1% !important;
 }
 
 .lightprimary{
@@ -64,6 +67,26 @@ body{
     max-width: 100%;
     max-height: 100px;
     width:auto;
+}
+
+.bloc {
+    width: 100px;
+    height: 50px;
+    border-color : white;
+    border-width : 1px;
+    color : white;
+}
+
+.bleu{
+    background-color: green;
+}
+
+.orange{
+    background-color: $primary;
+}
+
+.center {
+    text-align: center !important;
 }
 
 

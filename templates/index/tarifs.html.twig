@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil OpenParc!{% endblock %}
+{% block title %}Tarifs Open Parc{% endblock %}
 
 {% block body %}
 {% include 'common/header.html' %}
@@ -9,6 +9,21 @@
     <div class="row">
         <div class="col-md lightprimary">
             <div class="text-center mx-auto pt-5 pb-5">
+                <h5>Tarifs</h5>
+                <div class='center'>
+                    <table>
+                        <td class='bloc bleu'></td>
+                        <td class='bloc bleu'>Catégorie 1</td>
+                        <td class='bloc bleu'>Catégorie 2</td>
+                    </table>
+                    {% for item in tarifs %}
+                        <table>
+                            <td class='bloc bleu'>{{item.jour}}</td>
+                            <td class='bloc orange'>{{item.cat1}}</td>
+                            <td class='bloc orange'>{{item.cat2}}</td>
+                        </table>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
