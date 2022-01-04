@@ -39,7 +39,7 @@ class AdminController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         return[
-            MenuItem::linktoRoute('Back to the website', 'fas fa-home', 'homepage'),
+            MenuItem::linktoRoute('Back to the website', 'fas fa-home', 'index'),
             MenuItem::linkToCrud('Arbitrators', 'fas fa-users', Arbitrator::class),
             MenuItem::linkToCrud('Ballboys', 'fas fa-users', BallBoy::class),
             MenuItem::linkToCrud('Bookings', 'fas fa-users', Booking::class),
