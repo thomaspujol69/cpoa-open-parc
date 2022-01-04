@@ -14,9 +14,8 @@ class TicketingController extends AbstractController
         $user = $this->getUser();
         if (!$user){
             return $this->redirectToRoute('app_login');
-        }else{
-            print("User exists");
         }
+        
         return $this->render('ticketing/index.html.twig', [
             'controller_name' => 'TicketingController',
         ]);
