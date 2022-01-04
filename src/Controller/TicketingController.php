@@ -13,7 +13,7 @@ class TicketingController extends AbstractController
     {
         $user = $this->getUser();
         if (!$user){
-            print("User do not exist");
+            return $this->redirectToRoute('app_login');
         }else{
             print("User exists");
         }
