@@ -11,6 +11,12 @@ class TicketingController extends AbstractController
     #[Route('/billetterie', name: 'ticketing')]
     public function index(): Response
     {
+        $user = $this->getUser();
+        if (!$user){
+            print("User do not exist");
+        }else{
+            print("User exists");
+        }
         return $this->render('ticketing/index.html.twig', [
             'controller_name' => 'TicketingController',
         ]);
