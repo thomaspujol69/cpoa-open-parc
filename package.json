@@ -25,6 +25,7 @@
         "heroku-postbuild": "encore prod"
     },
     "dependencies": {
+        "encore": "^0.0.30-beta",
         "webpack": "^5.65.0"
     }
 }
