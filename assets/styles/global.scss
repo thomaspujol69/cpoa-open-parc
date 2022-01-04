@@ -1,4 +1,4 @@
-$background: #fff;
+$background: #e96d07;
 $primary: #c04414;
 $lightprimary: #e96d07;
 $verylightprimary: #ebba6c;
@@ -18,10 +18,6 @@ body{
     max-width: 100% !important;
 }
 
-.lightprimary{
-    background-color: $lightprimary !important;
-}
-
 .border {
     color : black;
     border: 1px white;
@@ -29,6 +25,7 @@ body{
 }
 
 .navbar{
+    color : white !important;
     .navbar-brand{
         margin-right: 2rem;
         margin-left: 2rem;
