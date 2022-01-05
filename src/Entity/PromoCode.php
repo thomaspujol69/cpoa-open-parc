@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PromoCodeRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,16 @@ class PromoCode
      * @ORM\Column(type="integer")
      */
     private $promoPercentage;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Ticket::class, mappedBy="promoCode")
+     */
+    private $tickets;
+
+    public function __construct()
+    {
+        $this->tickets = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -69,6 +81,36 @@ class PromoCode
     public function setPromoPercentage(int $promoPercentage): self
     {
         $this->promoPercentage = $promoPercentage;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Ticket[]
+     */
+    public function getTickets(): Collection
+    {
+        return $this->tickets;
+    }
+
+    public function addTicket(Ticket $ticket): self
+    {
+        if (!$this->tickets->contains($ticket)) {
+            $this->tickets[] = $ticket;
+            $ticket->setPromoCode($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTicket(Ticket $ticket): self
+    {
+        if ($this->tickets->removeElement($ticket)) {
+            // set the owning side to null (unless already changed)
+            if ($ticket->getPromoCode() === $this) {
+                $ticket->setPromoCode(null);
+            }
+        }
 
         return $this;
     }

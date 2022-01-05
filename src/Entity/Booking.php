@@ -27,6 +27,16 @@ class Booking
      */
     private $hourBooking;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Player::class, inversedBy="booking")
+     */
+    private $player;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Court::class, inversedBy="bookings")
+     */
+    private $court;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +62,30 @@ class Booking
     public function setHourBooking(string $hourBooking): self
     {
         $this->hourBooking = $hourBooking;
+
+        return $this;
+    }
+
+    public function getPlayer(): ?Player
+    {
+        return $this->player;
+    }
+
+    public function setPlayer(?Player $player): self
+    {
+        $this->player = $player;
+
+        return $this;
+    }
+
+    public function getCourt(): ?Court
+    {
+        return $this->court;
+    }
+
+    public function setCourt(?Court $court): self
+    {
+        $this->court = $court;
 
         return $this;
     }
