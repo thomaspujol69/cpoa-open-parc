@@ -894,7 +894,7 @@
 
 "@fortawesome/fontawesome-free@^5.15.4":
   version "5.15.4"
-  resolved "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-5.15.4.tgz"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.15.4.tgz#ecda5712b61ac852c760d8b3c79c96adca5554e5"
   integrity sha512-eYm8vijH/hpzr/6/1CJ/V/Eb1xQFW2nnUKArb3z+yUWv7HTwj6M7SP957oMjfZjAHU6qpoNc2wQvIxBLWYa/Jg==
 
 "@gar/promisify@^1.0.1":
@@ -4945,7 +4945,6 @@ runway@~3.15.47-beta:
   integrity sha1-QlBBKSqwFHf6M6CyjParlr2TV9w=
   dependencies:
     lodash-node "~2.4.1"
-
 
 safe-buffer@5.1.2, safe-buffer@>=5.1.0, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"

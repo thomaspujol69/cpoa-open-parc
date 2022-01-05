@@ -45,13 +45,13 @@ class AdminController extends AbstractDashboardController
     {
         return[
             MenuItem::linktoRoute('Back to the website', 'fas fa-home', 'index'),
-            MenuItem::linkToCrud('Arbitrators', 'fas fa-users', Arbitrator::class),
-            MenuItem::linkToCrud('Ballboys', 'fas fa-users', BallBoy::class),
-            MenuItem::linkToCrud('Bookings', 'fas fa-users', Booking::class),
-            MenuItem::linkToCrud('Courts', 'fas fa-users', Court::class),
-            MenuItem::linkToCrud('Players', 'fas fa-users', Player::class),
+            MenuItem::linkToCrud('Arbitrators', 'fas fa-flag', Arbitrator::class),
+            MenuItem::linkToCrud('Ballboys', 'fas fa-baseball-ball', BallBoy::class),
+            MenuItem::linkToCrud('Bookings', 'fas fa-book', Booking::class),
+            MenuItem::linkToCrud('Courts', 'far fa-map', Court::class),
+            MenuItem::linkToCrud('Players', 'fas fa-running', Player::class),
             MenuItem::linkToCrud('Teams', 'fas fa-users', Team::class),
-            MenuItem::linkToCrud('Users', 'fas fa-users', User::class)
+            MenuItem::linkToCrud('Users', 'fas fa-user', User::class)
         ];
     }
 }
