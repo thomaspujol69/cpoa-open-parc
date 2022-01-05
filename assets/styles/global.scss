@@ -101,9 +101,13 @@ body{
     margin : auto;
 }
 
+.exact{
+    width: 500px;
+}
+
 #registration_form{
     div{
-        margin-left : -5%;
+        margin-left : -9%;
     }
 
     label {
@@ -126,7 +130,7 @@ body{
 }
 
 .button {
-    margin-left: 48%;
+    margin-left: 42%;
     border : 2px solid black !important;
 }
 
@@ -136,7 +140,7 @@ body{
 }
 
 label.required{
-    margin-left: 45%;
+    margin-left: 33%;
     font-weight: bold;
     margin-bottom: 20px;
     text-transform: uppercase;
