@@ -24,13 +24,7 @@ body{
     background-color : $verylightprimary;
 }
 
-.btn:hover {
-    color : white;
-    background-color : $lightprimary;
-}
-
 .navbar{
-    color : white !important;
     .navbar-brand{
         margin-right: 2rem;
         margin-left: 2rem;
@@ -47,7 +41,9 @@ body{
         border-radius: inherit;
     }
 }
+
 #map { height: 100%; }
+
 .separator {
     display:block;
     margin:auto;
@@ -106,14 +102,55 @@ body{
 }
 
 #registration_form{
-    div, .btn{
-        margin-bottom: 10px;
-        margin-left : 40%;
+    div{
+        margin-left : -5%;
     }
 
     label {
         margin-right : 10px;
+        font-weight: normal !important;
+        text-transform: none !important;
     }
+
+    #registration_form_email{
+        margin-left: 34px;
+    }
+
+    #registration_form_plainPassword{
+        margin-left: 5px;
+    }
+
+    #registration_form_firstName{
+        margin-left: -2px;
+    }
+}
+
+.button {
+    margin-left: 48%;
+    border : 2px solid black !important;
+}
+
+.button:hover {
+    color : white !important;
+    background-color : $lightprimary;
+}
+
+label.required{
+    margin-left: 45%;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.terms{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 50px;
+    text-align: justify;
+}
+
+.titreT{
+    text-align: center;
 }
 
 @import "./bootstrap.min.css";
