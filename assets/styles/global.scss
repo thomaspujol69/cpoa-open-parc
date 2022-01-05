@@ -24,13 +24,7 @@ body{
     background-color : $verylightprimary;
 }
 
-.btn:hover {
-    color : white;
-    background-color : $lightprimary;
-}
-
 .navbar{
-    color : white !important;
     .navbar-brand{
         margin-right: 2rem;
         margin-left: 2rem;
@@ -47,7 +41,9 @@ body{
         border-radius: inherit;
     }
 }
+
 #map { height: 100%; }
+
 .separator {
     display:block;
     margin:auto;
@@ -81,6 +77,7 @@ body{
     width:auto;
 }
 
+//page tarifs
 .bloc {
     width: 100px;
     height: 50px;
@@ -101,19 +98,70 @@ body{
     background-color: $primary;
 }
 
+//page register
 .center {
     margin : auto;
 }
 
+.dim500{
+    width: 500px;
+}
+
 #registration_form{
-    div, .btn{
-        margin-bottom: 10px;
-        margin-left : 40%;
+    div{
+        margin-left : -13%;
     }
 
     label {
         margin-right : 10px;
+        font-weight: normal !important;
+        text-transform: none !important;
     }
+
+    #registration_form_email{
+        margin-left: 34px;
+    }
+
+    #registration_form_plainPassword{
+        margin-left: 5px;
+    }
+
+    #registration_form_firstName{
+        margin-left: -2px;
+    }
+}
+
+.button {
+    margin-left: 42%;
+    border : 2px solid black !important;
+}
+
+.button:hover {
+    color : white !important;
+    background-color : $lightprimary;
+}
+
+label.required{
+    margin-left: 33%;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.terms{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 50px;
+    text-align: justify;
+}
+
+.titreT{
+    text-align: center;
+}
+
+//page login
+.marge{
+    margin: 5px;
 }
 
 @import "./bootstrap.min.css";
