@@ -9,12 +9,14 @@
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
-<div class="col-md pt-5 lightprimary">
-    <div class="pt-5 pb-5 mb-5 border">
-        {{ form_row(registrationForm) }}
-        <button type='commit' class='btn'>Register</button>
+    <div class="col-md pt-5 lightprimary">
+        <div class="pt-5 pb-5 mb-5 border">
+            {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm) }}
+                <button type='commit' class='btn'>Register</button>
+            {{ form_end(registrationForm) }}
+        </div>
     </div>
-</div>
 
 {% include 'common/footer.html' %}
 
