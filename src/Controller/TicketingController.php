@@ -55,4 +55,8 @@ class TicketingController extends AbstractController
             'days' => $days
         ]);
     }
+
+    #[Route('/billetterie', name: 'selectTicket')]
+    public function selectTicket(): Response
+    {
 }
