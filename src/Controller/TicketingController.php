@@ -57,7 +57,7 @@ class TicketingController extends AbstractController
     }
 
     #[Route('/billetterie/{date}', name: 'selectTicket')]
-    public function selectTicket(Date $date): Response
+    public function selectTicket(DateTime $date): Response
     {
 
     }
