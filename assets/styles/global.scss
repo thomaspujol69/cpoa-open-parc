@@ -24,6 +24,15 @@ body{
     background-color : $verylightprimary;
 }
 
+.btn {
+    border : 1px black !important;
+}
+
+.btn:hover {
+    color : white;
+    background-color : $lightprimary;
+}
+
 .navbar{
     color : white !important;
     .navbar-brand{
