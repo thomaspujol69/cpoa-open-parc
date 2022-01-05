@@ -77,6 +77,7 @@ body{
     width:auto;
 }
 
+//page tarifs
 .bloc {
     width: 100px;
     height: 50px;
@@ -97,17 +98,18 @@ body{
     background-color: $primary;
 }
 
+//page register
 .center {
     margin : auto;
 }
 
-.exact{
+.dim500{
     width: 500px;
 }
 
 #registration_form{
     div{
-        margin-left : -9%;
+        margin-left : -13%;
     }
 
     label {
@@ -155,6 +157,11 @@ label.required{
 
 .titreT{
     text-align: center;
+}
+
+//page login
+.marge{
+    margin: 5px;
 }
 
 @import "./bootstrap.min.css";
