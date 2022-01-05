@@ -24,10 +24,6 @@ body{
     background-color : $verylightprimary;
 }
 
-.btn {
-    border : 1px black !important;
-}
-
 .btn:hover {
     color : white;
     background-color : $lightprimary;
@@ -110,7 +106,7 @@ body{
 }
 
 #registration_form{
-    div{
+    div, .btn{
         margin-bottom: 10px;
         margin-left : 40%;
     }
