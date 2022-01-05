@@ -1,21 +1,34 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Register Open Parc{% endblock %}
+
 
 {% block body %}
+{% include 'common/header.html' %}
+
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
+<div class="first-container">
+    <div class="row">
+        <div class="col-md lightprimary">
+            <div class="text-center mx-auto pt-4 pb-5">
+                <h5>Register</h5>
+                {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.plainPassword, {
+                label: 'Password'
+                }) }}
+                {{ form_row(registrationForm.agreeTerms) }}
 
-    <h1>Register</h1>
+                <button type="submit" class="btn">Register</button>
+                {{ form_end(registrationForm) }}
+            </div>
+        </div>
+    </div>
+</div>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+{% include 'common/footer.html' %}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
 {% endblock %}
+
