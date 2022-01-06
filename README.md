@@ -1,5 +1,7 @@
 # CPOA - Open Parc
 
+Statut : En cours
+
 Membres :
 Lucas Daneyrolle,
 Rémy Kopp,
