@@ -1,32 +1,17 @@
 # CPOA - Open Parc
 
-## Getting Started
+Membres :
+Lucas Daneyrolle
+Rémy Kopp
+Thomas Pujol (chef de projet)
 
-1. If not already done, [install Docker Compose](https://docs.docker.com/compose/install/)
-2. Run `docker-compose build --pull --no-cache` to build fresh images
-3. Run `docker-compose up` (the logs will be displayed in the current shell)
-4. Open `https://localhost` in your favorite web browser and [accept the auto-generated TLS certificate](https://stackoverflow.com/a/15076602/1352334)
-5. Run `docker-compose down --remove-orphans` to stop the Docker containers.
+Consignes : 42h pour réaliser en trinôme l'analyse et l'implémentation de l'application OPEN PARC de Lyon avec notamment la gestion de la billeterie et du planning des matchs, puis réalisation de deux rapports.
 
-## Features
+Technologie utilisée : Symfony
 
-* Production, development and CI ready
-* Automatic HTTPS (in dev and in prod!)
-* HTTP/2, HTTP/3 and [Preload](https://symfony.com/doc/current/web_link.html) support
-* Built-in [Mercure](https://symfony.com/doc/current/mercure.html) hub
-* [Vulcain](https://vulcain.rocks) support
-* Just 2 services (PHP FPM and Caddy server)
-* Super-readable configuration
+Répartition des tâches :
+Lucas : Front
+Rémy : Back
+Thomas : Front et back + superviseur
 
-**Enjoy!**
-
-## Docker docs
-
-1. [Build options](dockerDocs/build.md)
-2. [Using Symfony Docker with an existing project](dockerDocs/existing-project.md)
-3. [Support for extra services](dockerDocs/extra-services.md)
-4. [Deploying in production](dockerDocs/production.md)
-5. [Installing Xdebug](dockerDocs/xdebug.md)
-6. [Using a Makefile](dockerDocs/makefile.md)
-7. [Troubleshooting](dockerDocs/troubleshooting.md)
-
+Lien de la production finale : https://cpoa-open-parc.herokuapp.com/
