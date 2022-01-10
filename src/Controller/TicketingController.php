@@ -29,8 +29,9 @@ class TicketingController extends AbstractController
     }
 
     #[Route('/billetterie/{date}', name: 'selectTicket')]
-    public function selectTicket(DateTime $date): Response
+    public function selectTicket($date): Response
     {
-
+        $date = new \DateTime($date);
+        return new Response($date->format('d-m-Y'));
     }
 }
