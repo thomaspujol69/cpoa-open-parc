@@ -49,10 +49,7 @@ class ClientAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        // For example:
-        $tpath = $request->query->get('_target_path');
-        print($tpath);
-        return new RedirectResponse($this->urlGenerator->generate(($tpath!=null) ? $tpath : 'index')); // On renvoie à l'index après registering 
+        return new RedirectResponse('index'); // On renvoie à l'index par défaut 
         //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
