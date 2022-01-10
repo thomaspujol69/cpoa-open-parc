@@ -17,11 +17,10 @@ class AppFixtures extends Fixture
             'memory-hard' => ['algorithm' => 'sodium'],
         ]);
         $passwordHasher = $factory->getPasswordHasher('common');
-
+        
         $u = new User();
         $u->setEmail("cpoa-admin@yopmail.com");
         $u->setRoles(["admin"]);
-        
         $u->setPassword(
             $passwordHasher->hash("azertyuiop")
         );
@@ -29,7 +28,6 @@ class AppFixtures extends Fixture
         $u->setLastName("AdminL");
 
         $manager->persist($u);
-
         $manager->flush();
     }
 }
