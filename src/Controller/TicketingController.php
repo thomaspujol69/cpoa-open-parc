@@ -35,6 +35,9 @@ class TicketingController extends AbstractController
         $day = $drep->findOneByDate($date);
         $ticket = new \App\Entity\Ticket();
         $form = $this->createForm(TicketReservationType::class, $ticket);
+        if ($form->isSubmitted() && $form->isValid()) {
+            
+        }
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
         ]);
