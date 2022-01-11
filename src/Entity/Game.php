@@ -35,7 +35,7 @@ class Game
     private $hour;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255,nullable=true)
      */
     private $score;
 
@@ -274,5 +274,9 @@ class Game
         $this->day = $day;
 
         return $this;
+    }
+    public function __toString()
+    {
+        return ($this->id.' '.$this->date.' '.$this->hour);
     }
 }

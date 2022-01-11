@@ -64,7 +64,7 @@ class Arbitrator
         return $this->name;
     }
 
-    public function setName(int $name): self
+    public function setName(string $name): self
     {
         $this->name = $name;
 
@@ -162,6 +162,6 @@ class Arbitrator
 
     public function __toString()
     {
-        return ($this->id);
+        return ($this->id.' '.$this->name);
     }
 }

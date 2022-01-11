@@ -96,4 +96,10 @@ class Team
 
         return $this;
     }
+
+    public function __toString()
+    {
+        
+        return ($this->players[0]->getLastName().' '.$this->players[1]->getLastName());
+    }
 }
