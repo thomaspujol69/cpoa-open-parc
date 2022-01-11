@@ -20,6 +20,11 @@ class Arbitrator
     private $id;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
+    /**
      * @ORM\Column(type="integer")
      */
     private $nbSimpleMatchs;
@@ -28,11 +33,6 @@ class Arbitrator
      * @ORM\Column(type="integer")
      */
     private $nbDoubleMatchs;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $isChair;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -59,7 +59,17 @@ class Arbitrator
     {
         return $this->id;
     }
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
 
+    public function setName(int $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
     public function getNbSimpleMatchs(): ?int
     {
         return $this->nbSimpleMatchs;
@@ -80,18 +90,6 @@ class Arbitrator
     public function setNbDoubleMatchs(int $nbDoubleMatchs): self
     {
         $this->nbDoubleMatchs = $nbDoubleMatchs;
-
-        return $this;
-    }
-
-    public function getIsChair(): ?bool
-    {
-        return $this->isChair;
-    }
-
-    public function setIsChair(bool $isChair): self
-    {
-        $this->isChair = $isChair;
 
         return $this;
     }
@@ -160,5 +158,10 @@ class Arbitrator
         $this->lineGame->removeElement($lineGame);
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return ($this->id);
     }
 }
