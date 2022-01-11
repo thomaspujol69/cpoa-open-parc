@@ -38,9 +38,13 @@ class TicketingController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             
         }
-        return $this->render('registration/register.html.twig', [
-            'registrationForm' => $form->createView(),
+        $nbDispoPlaces = 1;
+        $ppp = 1;
+        return $this->render('ticketing/day.html.twig', [
+            'form' => $form->createView(),
+            'nbDispoPlaces' => $nbDispoPlaces,
+            'ppp' => $day->getCat2Price()
+
         ]);
-        return new Response($day->getDate()->format("Y m d"));
     }
 }
