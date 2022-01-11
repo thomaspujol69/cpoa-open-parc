@@ -20,7 +20,7 @@ class AppFixtures extends Fixture
         
         $u = new User();
         $u->setEmail("cpoa-admin@yopmail.com");
-        $u->setRoles(["admin"]);
+        $u->setRoles(["ROLE_ADMIN"]);
         $u->setPassword(
             $passwordHasher->hash("azertyuiop")
         );
