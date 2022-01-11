@@ -164,6 +164,6 @@ class Player
 
     public function __toString()
     {
-        return $this->lastName;
+        return ($this->firstName.' '.$this->lastName);
     }
 }

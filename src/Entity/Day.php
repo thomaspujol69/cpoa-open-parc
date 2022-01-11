@@ -184,4 +184,9 @@ class Day
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return ($this->id.' '.$this->date);
+    }
 }
