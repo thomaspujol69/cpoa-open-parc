@@ -1,6 +1,6 @@
 <?php
 
-namespace TicketTypeCrudController;
+namespace App\Controller\Admin;
 
 use App\Entity\TicketType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;

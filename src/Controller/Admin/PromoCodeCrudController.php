@@ -1,6 +1,6 @@
 <?php
 
-namespace PromoCodeCrudController;
+namespace App\Controller\Admin;
 
 use App\Entity\PromoCode;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
