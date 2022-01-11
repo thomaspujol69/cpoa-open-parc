@@ -196,8 +196,13 @@ label.required{
 
 //page ticketing
 #ticketing{
-    display :flex;
-    flex-wrap: wrap;
+    margin : 0 auto;
+    text-align: center;
+    .chibre{
+        display : flex;
+        flex-wrap: wrap;
+    }
+
     .carré{
         width: 340px !important;
         height: 200px !important;

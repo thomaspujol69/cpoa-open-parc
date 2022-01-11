@@ -1,13 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil Open Parc{% endblock %}
+{% block title %}Billetterie Open Parc{% endblock %}
 
 {% block body %}
 {% include 'common/header.html' %}
 
 <div id="ticketing" class="first-container">
+    <div class="chibre">
     {% for day in days %}
-        <div class="mb-4 mt-4 pt-3 pl-3 carré border day">
+        <div class="mb-4 mt-4 pt-3 carré border day">
             <div>
                 <h4>{{ day.date|format_datetime(locale='fr',pattern="EEEE")|capitalize }}</h4>
                 <h5>{{ day.date|format_datetime(locale='fr',pattern="dd MMMM YYYY")|capitalize }} - {{ day.begining|date("H:i") }}</h5>
@@ -16,6 +17,7 @@
             <a class="btn btn-dark" href="{{ path('ticketing') }}/{{ day.date|date("Y-m-d") }}">Réserver</a>
         </div>
     {% endfor %}
+    </div>
 </div>
 
 <div class="container ">
