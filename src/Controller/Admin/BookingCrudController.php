@@ -24,6 +24,11 @@ public function configureFields(string $pageName): iterable
          AssociationField::new('court')
         ->setFormTypeOptions([
             'by_reference' => false
+        ]),
+
+        AssociationField::new('player')
+        ->setFormTypeOptions([
+            'by_reference' => false
         ])
     ];
 }

@@ -42,6 +42,10 @@ class GameCrudController extends AbstractCrudController
             AssociationField::new('court')
             ->setFormTypeOptions([
                 'by_reference' => false
+            ]),
+            AssociationField::new('teams')
+            ->setFormTypeOptions([
+                'by_reference' => false
             ])
         ];
     }
