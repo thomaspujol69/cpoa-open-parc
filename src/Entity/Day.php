@@ -44,6 +44,16 @@ class Day
      */
     private $tickets;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $cat1Price;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $cat2Price;
+
     public function __construct()
     {
         $this->games = new ArrayCollection();
@@ -149,5 +159,34 @@ class Day
         }
 
         return $this;
+    }
+
+    public function getCat1Price(): ?int
+    {
+        return $this->cat1Price;
+    }
+
+    public function setCat1Price(int $cat1Price): self
+    {
+        $this->cat1Price = $cat1Price;
+
+        return $this;
+    }
+
+    public function getCat2Price(): ?int
+    {
+        return $this->cat2Price;
+    }
+
+    public function setCat2Price(int $cat2Price): self
+    {
+        $this->cat2Price = $cat2Price;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return ($this->id.' '.$this->date);
     }
 }

@@ -114,4 +114,9 @@ class PromoCode
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return ($this->label.' '.$this->code.' '.$this->promoPercentage);
+    }
 }
