@@ -4,23 +4,24 @@ namespace App\Controller\Admin;
 
 use App\Entity\Booking;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EaysyAdminBundle\Field\Field;
 
 class BookingCrudController extends AbstractCrudController
 {
-  /*  public static function getEntityFqcn(): string
+  public static function getEntityFqcn(): string
     {
         return Booking::class;
     }
-*/
+
   
 public function configureFields(string $pageName): iterable
 {
     return [
-        yield IdField::new('id'),
-        yield DateTimeField::new('Date Booking'),
-        yield TextField::new('Hour Booking'),
+         Field::new('id'),
+         Field::new('Date Booking'),
+         Field::new('Hour Booking'),
 
-        yield AssociationField::new('courts')
+         AssociationField::new('courts')
         ->setFormTypeOptions([
             'by_reference' => false,
         ])
