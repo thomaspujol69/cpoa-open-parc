@@ -24,9 +24,15 @@ class Team
      */
     private $players;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Game::class, mappedBy="teams")
+     */
+    private $games;
+
     public function __construct()
     {
         $this->players = new ArrayCollection();
+        $this->games = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -59,6 +65,33 @@ class Team
             if ($player->getTeam() === $this) {
                 $player->setTeam(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Game[]
+     */
+    public function getGames(): Collection
+    {
+        return $this->games;
+    }
+
+    public function addGame(Game $game): self
+    {
+        if (!$this->games->contains($game)) {
+            $this->games[] = $game;
+            $game->addTeam($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGame(Game $game): self
+    {
+        if ($this->games->removeElement($game)) {
+            $game->removeTeam($this);
         }
 
         return $this;

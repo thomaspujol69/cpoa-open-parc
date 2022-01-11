@@ -64,11 +64,17 @@ class Game
      */
     private $court;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Team::class, inversedBy="games")
+     */
+    private $teams;
+
     public function __construct()
     {
         $this->lineArbitrators = new ArrayCollection();
         $this->ballBoys = new ArrayCollection();
         $this->players = new ArrayCollection();
+        $this->teams = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -225,6 +231,30 @@ class Game
     public function setCourt(?Court $court): self
     {
         $this->court = $court;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Team[]
+     */
+    public function getTeams(): Collection
+    {
+        return $this->teams;
+    }
+
+    public function addTeam(Team $team): self
+    {
+        if (!$this->teams->contains($team)) {
+            $this->teams[] = $team;
+        }
+
+        return $this;
+    }
+
+    public function removeTeam(Team $team): self
+    {
+        $this->teams->removeElement($team);
 
         return $this;
     }

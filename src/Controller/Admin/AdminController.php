@@ -15,6 +15,7 @@ use App\Entity\Court;
 use App\Entity\Player;
 use App\Entity\Team;
 use App\Entity\User;
+use App\Entity\Game;
 
 
 class AdminController extends AbstractDashboardController
@@ -51,7 +52,8 @@ class AdminController extends AbstractDashboardController
             MenuItem::linkToCrud('Courts', 'far fa-map', Court::class),
             MenuItem::linkToCrud('Players', 'fas fa-running', Player::class),
             MenuItem::linkToCrud('Teams', 'fas fa-users', Team::class),
-            MenuItem::linkToCrud('Users', 'fas fa-user', User::class)
+            MenuItem::linkToCrud('Users', 'fas fa-user', User::class),
+            MenuItem::linkToCrud('Games', 'fas fa-baseball-ball', Game::class)
         ];
     }
 }
