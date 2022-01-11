@@ -56,10 +56,10 @@ class AdminController extends AbstractDashboardController
             MenuItem::linkToCrud('Players', 'fas fa-running', Player::class),
             MenuItem::linkToCrud('Teams', 'fas fa-users', Team::class),
             MenuItem::linkToCrud('Users', 'fas fa-user', User::class),
-            MenuItem::linkToCrud('Games', 'fas fa-baseball-ball', Game::class),
-            MenuItem::linkToCrud('Tickets', 'fas fa-baseball-ball', Ticket::class),
-            MenuItem::linkToCrud('Ticket Types', 'fas fa-baseball-ball', TicketType::class),
-            MenuItem::linkToCrud('Promo Codes', 'fas fa-baseball-ball', PromoCode::class)
+            MenuItem::linkToCrud('Games', 'fas fa-trophy', Game::class),
+            MenuItem::linkToCrud('Tickets', '<i class="fas fa-ticket-alt', Ticket::class),
+            MenuItem::linkToCrud('Ticket Types', 'fas fa-clipboard-list', TicketType::class),
+            MenuItem::linkToCrud('Promo Codes', 'fas fa-percentage', PromoCode::class)
         ];
     }
 }
