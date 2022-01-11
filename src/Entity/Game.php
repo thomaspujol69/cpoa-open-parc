@@ -69,6 +69,11 @@ class Game
      */
     private $teams;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Day::class, inversedBy="games")
+     */
+    private $day;
+
     public function __construct()
     {
         $this->lineArbitrators = new ArrayCollection();
@@ -255,6 +260,18 @@ class Game
     public function removeTeam(Team $team): self
     {
         $this->teams->removeElement($team);
+
+        return $this;
+    }
+
+    public function getDay(): ?Day
+    {
+        return $this->day;
+    }
+
+    public function setDay(?Day $day): self
+    {
+        $this->day = $day;
 
         return $this;
     }

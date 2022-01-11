@@ -37,6 +37,11 @@ class Ticket
      */
     private $promoCode;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Day::class, inversedBy="tickets")
+     */
+    private $day;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Ticket
     public function setPromoCode(?PromoCode $promoCode): self
     {
         $this->promoCode = $promoCode;
+
+        return $this;
+    }
+
+    public function getDay(): ?Day
+    {
+        return $this->day;
+    }
+
+    public function setDay(?Day $day): self
+    {
+        $this->day = $day;
 
         return $this;
     }
