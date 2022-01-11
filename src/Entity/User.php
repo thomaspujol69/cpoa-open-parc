@@ -49,6 +49,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\OneToMany(targetEntity=Ticket::class, mappedBy="user")
      */
     private $tickets;
+    
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $firstName;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lastName;
 
     public function __construct()
     {
@@ -151,7 +161,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             $this->tickets[] = $ticket;
             $ticket->setUser($this);
         }
+        return $this;
+    }
 
+    public function getFirstName(): ?string
+    {
+        return $this->firstName;
+    }
+
+    public function setFirstName(string $firstName): self
+    {
+        $this->firstName = $firstName;
         return $this;
     }
 
@@ -163,7 +183,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $ticket->setUser(null);
             }
         }
+        return $this;
+    }
 
+    public function getLastName(): ?string
+    {
+        return $this->lastName;
+    }
+
+    public function setLastName(string $lastName): self
+    {
+        $this->lastName = $lastName;
         return $this;
     }
 }

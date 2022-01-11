@@ -1,20 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello TicketingController!{% endblock %}
+{% block title %}Accueil Open Parc{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+{% include 'common/header.html' %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/tpujo/Sandbox/cpoa-ld-rk-tp/src/Controller/TicketingController.php'|file_link(0) }}">src/Controller/TicketingController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/tpujo/Sandbox/cpoa-ld-rk-tp/templates/ticketing/index.html.twig'|file_link(0) }}">templates/ticketing/index.html.twig</a></code></li>
-    </ul>
+<div class="first-container">
+    {% for day in days %}
+        <div class="day">
+            <div>
+                <h4>{{ day.date|format_datetime(locale='fr',pattern="EEEE")|capitalize }}</h4>
+                <h5>{{ day.date|format_datetime(locale='fr',pattern="dd MMMM YYYY")|capitalize }} - {{ day.begining|date("H:i") }}</h5>
+                <p>{{ day.description }}<br>Horaires à confirmer sur www.openparc.com</p>
+            </div>
+            <a class="btn btn-dark" href="{{ path('ticketing') }}/{{ day.date|date("Y-m-d") }}">Réserver</a>
+        </div>
+    {% endfor %}
 </div>
+
+<div class="container ">
+
+</div>
+
+
+{% include 'common/footer.html' %}
 {% endblock %}
