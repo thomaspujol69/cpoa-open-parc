@@ -98,6 +98,7 @@ body{
     background-color: $primary;
 }
 
+
 //page register
 .center {
     margin : auto;
@@ -108,10 +109,6 @@ body{
 }
 
 #registration_form{
-    div{
-        margin-left : -13%;
-    }
-
     label {
         margin-right : 10px;
         font-weight: normal !important;
@@ -132,7 +129,7 @@ body{
 }
 
 .button {
-    margin-left: 42%;
+    margin-left: 23%;
     border : 2px solid black !important;
 }
 
@@ -142,7 +139,7 @@ body{
 }
 
 label.required{
-    margin-left: 33%;
+    margin-left: 23%;
     font-weight: bold;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -159,10 +156,55 @@ label.required{
     text-align: center;
 }
 
+
 //page login
-.marge{
-    margin: 5px;
+#login_form {
+    .logform{
+        margin-left : 23%;
+        margin-bottom: 13px;
+    }
+
+    .bold{
+        font-weight: bold;
+    }
+
+    .margeEmail{
+        margin-left : 40px;
+    }
+
+    .margePassword{
+        margin-left : 12px;
+    }
 }
+
+.btnlr {
+    margin-left: 47%;
+    border : 2px solid black !important;
+    background-color : $lightprimary !important;
+}
+
+.btnlr:hover {
+    color : black !important;
+    background-color : $verylightprimary !important;
+}
+
+.panier{
+    height: 50px;
+    width : 50px;
+}
+
+
+//page ticketing
+#ticketing{
+    display :flex;
+    flex-wrap: wrap;
+    .carré{
+        width: 340px !important;
+        height: 200px !important;
+        margin-left: 100px;
+    }
+}
+
 
 @import "./bootstrap.min.css";
 @import "~bootstrap/scss/bootstrap";

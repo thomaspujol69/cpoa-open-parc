@@ -161,4 +161,9 @@ class Player
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->lastName;
+    }
 }
