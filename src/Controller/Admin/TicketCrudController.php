@@ -1,0 +1,25 @@
+<?php
+
+namespace TicketCrudController;
+
+use App\Entity\Ticket;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+
+class TicketCrudController extends AbstractCrudController
+{
+    public static function getEntityFqcn(): string
+    {
+        return Ticket::class;
+    }
+
+    /*
+    public function configureFields(string $pageName): iterable
+    {
+        return [
+            IdField::new('id'),
+            TextField::new('title'),
+            TextEditorField::new('description'),
+        ];
+    }
+    */
+}
