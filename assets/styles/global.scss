@@ -198,10 +198,13 @@ label.required{
 #ticketing{
     display :flex;
     flex-wrap: wrap;
+    /*align-items: center;
+    flex-basis: auto;*/
+    justify-content: space-evenly;
     .carré{
         width: 340px !important;
         height: 200px !important;
-        margin-left: 100px;
+        //margin-left: 100px;
     }
 }
 
