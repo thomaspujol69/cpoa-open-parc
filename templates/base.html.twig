@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Open Parc{% endblock %}</title>
-        <link rel="icon" href="favicon.ico">
+        <link rel="icon" href="/favicon.ico">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -13,7 +13,7 @@
             <script src="/js/jquery-3.3.1.slim.min.js"></script>
             <script src="/js/popper.min.js"></script>
             <script src="/js/bootstrap.min.js"></script>        
-            {% endblock %}
+        {% endblock %}
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -24,5 +24,6 @@
     </head>
     <body>
         {% block body %}{% endblock %}
+        {% block javascript %}{% endblock %}
     </body>
 </html>

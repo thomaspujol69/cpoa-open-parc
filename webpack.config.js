@@ -68,7 +68,6 @@ Encore
     //.enableIntegrityHashes(Encore.isProduction())
 
     // uncomment if you're having problems with a jQuery plugin
-    .autoProvidejQuery()
     .autoProvideVariables({
         $: 'jquery/dist/jquery.slim.js',
         jQuery: 'jquery/dist/jquery.slim.js',
