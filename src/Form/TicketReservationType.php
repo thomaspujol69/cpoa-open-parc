@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 class TicketReservationType extends AbstractType
 {
@@ -19,10 +20,10 @@ class TicketReservationType extends AbstractType
                     'mapped' => false,
                     'attr' => array('value' => 1, 'min' => 1, 'max' => 50)
                 ))
-            /*->add('ticketType', ChoiceType::class, array(
-                'required' => 'required'
-            ))*/
             ->add('promoCode', TextType::class)
+            ->add('ticketType', CheckboxType::class, array(
+                'label' => 'Catégorie 1'
+            ))
         ;
     }
 

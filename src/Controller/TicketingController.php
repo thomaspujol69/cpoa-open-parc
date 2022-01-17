@@ -43,7 +43,8 @@ class TicketingController extends AbstractController
         return $this->render('ticketing/day.html.twig', [
             'form' => $form->createView(),
             'nbDispoPlaces' => $nbDispoPlaces,
-            'ppp' => $day->getCat2Price()
+            'ppp1' => $day->getCat1Price(),
+            'ppp2' => $day->getCat2Price()
         ]);
     }
 }
