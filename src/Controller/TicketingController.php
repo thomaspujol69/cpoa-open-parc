@@ -44,7 +44,6 @@ class TicketingController extends AbstractController
             'form' => $form->createView(),
             'nbDispoPlaces' => $nbDispoPlaces,
             'ppp' => $day->getCat2Price()
-
         ]);
     }
 }

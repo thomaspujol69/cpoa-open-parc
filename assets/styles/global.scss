@@ -193,6 +193,12 @@ label.required{
     width : 50px;
 }
 
+form[name="ticket_reservation"]{
+    #price{
+        display: block !important;
+        @extend label, .required;
+    }
+}
 
 //page ticketing
 #ticketing{

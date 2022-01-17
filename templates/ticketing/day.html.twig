@@ -2,7 +2,6 @@
 
 {% block title %}Register Open Parc{% endblock %}
 
-
 {% block body %}
 {% include 'common/header.html' %}
 
@@ -13,8 +12,8 @@
 <div class="col-md pt-5 lightprimary">
     <div class="pt-5 pb-5 mb-5 border dim500 center">
         {{ form_start(form) }}
-            {{ form_row(form) }}
-            <p>Prix : <span id="price">{{ ppp }}</span></p>
+            {{ form_row(form, {"id":"student"}) }}
+            <p id="price">Prix : <span id="displayPrice">{{ ppp }}</span>€</p>
             <button type='commit' class='btn button'>Réserver</button>
         {{ form_end(form) }}
     </div>
@@ -24,3 +23,13 @@
 
 {% endblock %}
 
+{% block javascript %}
+<script>
+    const ticket_reservation_quantity = document.getElementById('ticket_reservation_quantity');
+    const displayPrice = document.getElementById('displayPrice');
+    ticket_reservation_quantity.addEventListener('change', (event) => {
+        let v = (ticket_reservation_quantity.value*{{ ppp }}).toString();
+        displayPrice.textContent  = (v>=0) ? v : 0;
+    });
+</script>
+{% endblock %}
