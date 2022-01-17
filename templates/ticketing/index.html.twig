@@ -6,7 +6,6 @@
 {% include 'common/header.html' %}
 
 <div id="ticketing" class="first-container">
-    <div class="chibre">
     {% for day in days %}
         <div class="mb-4 mt-4 pt-3 carré border day">
             <div>
@@ -17,7 +16,6 @@
             <a class="btn btn-dark" href="{{ path('ticketing') }}/{{ day.date|date("Y-m-d") }}">Réserver</a>
         </div>
     {% endfor %}
-    </div>
 </div>
 
 <div class="container ">
