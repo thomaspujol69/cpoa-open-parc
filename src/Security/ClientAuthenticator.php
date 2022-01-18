@@ -46,7 +46,7 @@ class ClientAuthenticator extends AbstractLoginFormAuthenticator
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
         $targetPath = $this->getTargetPath($request->getSession(), $firewallName);
-        return new RedirectResponse(($targetPath) ? $this->urlGenerator->generate($targetPath) : $this->urlGenerator->generate('index')); // On renvoie à l'index par défaut 
+        return new RedirectResponse(($targetPath) ? $targetPath : $this->urlGenerator->generate('index')); // On renvoie à l'index par défaut 
         //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 

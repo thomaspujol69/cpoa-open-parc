@@ -10,6 +10,7 @@ use Symfony\Component\Security\Http\Util\TargetPathTrait;
 use App\Repository\DayRepository;
 use App\Repository\TicketRepository;
 use App\Repository\TicketTypeRepository;
+use App\Repository\PromoCodeRepository;
 use App\Form\TicketReservationType;
 
 class TicketingController extends AbstractController
@@ -20,10 +21,9 @@ class TicketingController extends AbstractController
     public function index(Request $request, DayRepository $drep): Response
     {
         $user = $this->getUser();
-        //print_r($user);
         if (!$user){
             $this->saveTargetPath($request->getSession(), "main", $request->getUri());
-            return $this->redirectToRoute('app_login');//, array('_target_path' => 'ticketing'));
+            return $this->redirectToRoute('app_login');
         }
         $days = $drep->getAll();
         return $this->render('ticketing/index.html.twig', [
@@ -34,12 +34,15 @@ class TicketingController extends AbstractController
     #[Route('/billetterie/{date}', name: 'selectTicket', methods: ['get'])]
     public function selectTicket(Request $request, $date, DayRepository $drep, TicketRepository $trep, TicketTypeRepository $ttrep): Response
     {
+        $user = $this->getUser();
+        if (!$user){
+            $this->saveTargetPath($request->getSession(), "main", $request->getUri());
+            return $this->redirectToRoute('app_login');
+        }
         $day = $drep->findOneByDate($date);
         $ticket = new \App\Entity\Ticket();
         $form = $this->createForm(TicketReservationType::class, $ticket);
-        if ($form->isSubmitted() && $form->isValid()) {
-            print_r("coucou");
-        }
+
         $c1 = $ttrep->findByLabel("Catégorie 1");
         $c2 = $ttrep->findByLabel("Catégorie 2");
 
@@ -57,21 +60,42 @@ class TicketingController extends AbstractController
         ]);
     }
     #[Route('/billetterie/{date}', name: 'buyTicket', methods: ['post'])]
-    public function buyTicket(Request $request, $date, DayRepository $drep, TicketRepository $trep, TicketTypeRepository $ttrep): Response
+    public function buyTicket(Request $request, $date, DayRepository $drep, TicketRepository $trep, PromoCodeRepository $pcrep, TicketTypeRepository $ttrep): Response
     {
+        $user = $this->getUser();
+        if (!$user){
+            $this->saveTargetPath($request->getSession(), "main", $request->getUri());
+            return $this->redirectToRoute('app_login');
+        }
         $day = $drep->findOneByDate($date);
-        // ticket_reservation[quantity] ticket_reservation[promoCode]
-        
-        if ($request->request->get('ticket_reservation[ticketType]') != 0){
+
+        $qt = (isset($_POST["ticket_reservation"]["quantity"])) ? $_POST["ticket_reservation"]["quantity"] : "";
+        $promoCode = (isset($_POST["ticket_reservation"]["promoCode"])) ? $_POST["ticket_reservation"]["promoCode"] : "";
+        $is1Cat = (isset($_POST["ticket_reservation"]["ticketType"])) ? $_POST["ticket_reservation"]["ticketType"] : 0;
+        //print_r([$qt, $promoCode, $is1Cat]);
+
+        if ($is1Cat == 1){
             $c = $ttrep->findByLabel("Catégorie 1");
+            $nbDispoPlaces = $day->getCat1DispPl() - $trep->countByTicketType($c);
+            $cp = $day->getCat1Price();
         }else{
             $c = $ttrep->findByLabel("Catégorie 2");
+            $nbDispoPlaces = $day->getCat2DispPl() - $trep->countByTicketType($c);
+            $cp = $day->getCat2Price();
         }
-        $nbDispoPlaces1 = $day->getCat1DispPl() - $trep->countByTicketType($c);
-        $c1p = $day->getCat1Price();
-        $c2p = $day->getCat2Price();
+
+        $pc = $pcrep->findByLabel($promoCode);
+
+        if($pc!=null){
+            // Il faut appliquer le promo code
+            //$prct = $pc->get
+        }
+
+        //$cp
+
         return $this->render('ticketing/book.html.twig', [
             'day' => $day,
+            'quantity' => $qt,
             'ppp' => 1,
             'total' => 2 
         ]);
