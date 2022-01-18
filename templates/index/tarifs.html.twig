@@ -16,11 +16,11 @@
                         <td class='bloc vert'>Catégorie 1</td>
                         <td class='bloc vert'>Catégorie 2</td>
                     </tr>
-                    {% for item in tarifsGP %}
+                    {% for item in days %}
                         <tr>
-                            <td class='bloc vert'>{{item.jour}}</td>
-                            <td class='bloc orange'>{{item.cat1}}</td>
-                            <td class='bloc orange'>{{item.cat2}}</td>
+                            <td class='bloc vert'>{{item.date|format_datetime(locale='fr',pattern="EEEE")|capitalize}}</td>
+                            <td class='bloc orange'>{{item.cat1Price}}€</td>
+                            <td class='bloc orange'>{{item.cat2Price}}€</td>
                         </tr>
                     {% endfor %}
                 </table>
@@ -35,11 +35,11 @@
                         <td class='bloc bleu'>Catégorie 1</td>
                         <td class='bloc bleu'>Catégorie 2</td>
                     </tr>
-                    {% for item in tarifsL %}
+                    {% for item in days %}
                         <tr>
-                            <td class='bloc bleu'>{{item.jour}}</td>
-                            <td class='bloc orange'>{{item.cat1}}</td>
-                            <td class='bloc orange'>{{item.cat2}}</td>
+                            <td class='bloc bleu'>{{item.date|format_datetime(locale='fr',pattern="EEEE")|capitalize}}</td>
+                            <td class='bloc orange'>{{item.cat1Price * 0.83}}€</td>
+                            <td class='bloc orange'>{{item.cat2Price  * 0.83}}€</td>
                         </tr>
                     {% endfor %}
                 </table>

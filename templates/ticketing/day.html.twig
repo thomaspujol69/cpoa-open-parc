@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Réservation Open Parc{% endblock %}
+{% block title %}Réserver - {{ day.date|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY")|capitalize }}{% endblock %}
 
 {% block body %}
 {% include 'common/header.html' %}
@@ -35,7 +35,7 @@
                     {{ form_help(form) }}
                 </div>
             </div>
-            <p id="price">Prix : <span id="displayPrice">{{ ppp2 }}</span>€</p>
+            <p id="price">Prix estimé : <span id="displayPrice">{{ ppp2 }}</span>€</p>
             <p id="places">Places disponibles : <span id="placesDis">{{ nbDispoPlaces2 }}</span></p>
             <button type='commit' class='btn button'>Réserver</button>
         {{ form_end(form) }}

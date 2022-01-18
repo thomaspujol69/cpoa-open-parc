@@ -25,9 +25,9 @@ class TicketType
     private $label;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="float", nullable=true)
      */
-    private $price;
+    private $price = null;
 
     /**
      * @ORM\OneToMany(targetEntity=Ticket::class, mappedBy="ticketType")

@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
 use App\Repository\DayRepository;
+use App\Repository\TicketRepository;
 use App\Form\TicketReservationType;
 
 class TicketingController extends AbstractController
@@ -30,16 +31,17 @@ class TicketingController extends AbstractController
     }
 
     #[Route('/billetterie/{date}', name: 'selectTicket')]
-    public function selectTicket(Request $request, $date, DayRepository $drep): Response
+    public function selectTicket(Request $request, $date, DayRepository $drep, TicketRepository $trep): Response
     {
         $day = $drep->findOneByDate($date);
         $ticket = new \App\Entity\Ticket();
         $form = $this->createForm(TicketReservationType::class, $ticket);
         if ($form->isSubmitted() && $form->isValid()) {
-            
+            print_r($form);
         }
-        $nbDispoPlaces1 = 1;
-        $nbDispoPlaces2 = 2;
+        $trep->countByTicketType(1);
+        $nbDispoPlaces1 = $drep->countByPlacesDispo(1);
+        $nbDispoPlaces2 = $drep->countByPlacesDispo(2);
         $ppp = 1;
         return $this->render('ticketing/day.html.twig', [
             'form' => $form->createView(),

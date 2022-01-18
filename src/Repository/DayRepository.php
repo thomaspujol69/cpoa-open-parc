@@ -60,15 +60,18 @@ class DayRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-    /*
-    public function findOneBySomeField($value): ?Day
+
+    
+
+    
+    public function countByPlacesDispo($value): ?Number
     {
+        
         return $this->createQueryBuilder('d')
-            ->andWhere('d.exampleField = :val')
-            ->setParameter('val', $value)
+            ->select('count(d.id)')
             ->getQuery()
-            ->getOneOrNullResult()
+            ->getSingleScalarResult()
         ;
     }
-    */
+    
 }
