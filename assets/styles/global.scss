@@ -239,7 +239,7 @@ form[name="ticket_reservation"]{
     div{
         margin-bottom: 10px;
     }
-    #displayPrice, #placesDis{
+    #euros, #placesDis{
         font-weight: bold;
     }
     #price, #places{
@@ -340,6 +340,18 @@ form[name="ticket_reservation"]{
     }
 }
 
+//  form[name="booking_ticket"]{
+    .button {
+        display : flex;
+        margin : 0 auto;
+        border : 2px solid black !important;
+    }
+
+    .button:hover {
+        color : white !important;
+        background-color : $lightprimary;
+    }
+//}
 
 
 @import "./bootstrap.min.css";
