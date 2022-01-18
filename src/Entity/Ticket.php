@@ -34,6 +34,7 @@ class Ticket
 
     /**
      * @ORM\ManyToOne(targetEntity=PromoCode::class, inversedBy="tickets")
+     * @ORM\JoinColumn(name="promo_code_id", referencedColumnName="id", nullable=true)
      */
     private $promoCode;
 

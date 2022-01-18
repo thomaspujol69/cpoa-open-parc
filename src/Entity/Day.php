@@ -54,6 +54,16 @@ class Day
      */
     private $cat2Price;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $cat1DispPl;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $cat2DispPl;
+
     public function __construct()
     {
         $this->games = new ArrayCollection();
@@ -188,5 +198,29 @@ class Day
     public function __toString()
     {
         return ($this->id.' '.$this->date);
+    }
+
+    public function getCat1DispPl(): ?int
+    {
+        return $this->cat1DispPl;
+    }
+
+    public function setCat1DispPl(int $cat1DispPl): self
+    {
+        $this->cat1DispPl = $cat1DispPl;
+
+        return $this;
+    }
+
+    public function getCat2DispPl(): ?int
+    {
+        return $this->cat2DispPl;
+    }
+
+    public function setCat2DispPl(int $cat2DispPl): self
+    {
+        $this->cat2DispPl = $cat2DispPl;
+
+        return $this;
     }
 }

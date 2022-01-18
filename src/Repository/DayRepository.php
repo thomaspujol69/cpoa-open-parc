@@ -59,19 +59,5 @@ class DayRepository extends ServiceEntityRepository
             ->getQuery()
             ->getOneOrNullResult()
         ;
-    }
-
-    
-
-    
-    public function countByPlacesDispo($value): ?Number
-    {
-        
-        return $this->createQueryBuilder('d')
-            ->select('count(d.id)')
-            ->getQuery()
-            ->getSingleScalarResult()
-        ;
-    }
-    
+    }    
 }
