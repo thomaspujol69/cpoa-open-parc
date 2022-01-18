@@ -28,6 +28,10 @@ class GameCrudController extends AbstractCrudController
             ->setFormTypeOptions([
                 'by_reference' => false
             ]),
+            AssociationField::new('teams')
+            ->setFormTypeOptions([
+                'by_reference' => false
+            ]),
             AssociationField::new('chairArbitrator')
             ->setFormTypeOptions([
                 'by_reference' => true
@@ -44,10 +48,6 @@ class GameCrudController extends AbstractCrudController
             AssociationField::new('court')
             ->setFormTypeOptions([
                 'by_reference' => true
-            ]),
-            AssociationField::new('teams')
-            ->setFormTypeOptions([
-                'by_reference' => false
             ])
         ];
     }

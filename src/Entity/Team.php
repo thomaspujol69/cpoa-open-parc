@@ -102,4 +102,10 @@ class Team
       //  return "";
         return ($this->players[0]->getLastName().' '.$this->players[1]->getLastName());
     }
+    public function getPlayerOne(){
+        return $this->players[0];
+    }
+    public function getPlayerTwo(){
+        return $this->players[1];
+    }
 }
