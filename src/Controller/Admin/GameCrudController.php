@@ -19,6 +19,7 @@ class GameCrudController extends AbstractCrudController
     {
         return [
             Field::new('isFinal'),
+            Field::new('isDouble'),
             Field::new('date'),
             Field::new('hour'),
             Field::new('score'),

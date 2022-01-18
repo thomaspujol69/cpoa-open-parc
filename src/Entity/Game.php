@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Config\Definition\Exception\Exception;
 use App\Repository\GameRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -73,6 +74,11 @@ class Game
      * @ORM\ManyToOne(targetEntity=Day::class, inversedBy="games")
      */
     private $day;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isDouble = False;
 
     public function __construct()
     {
@@ -157,9 +163,13 @@ class Game
 
     public function addLineArbitrator(Arbitrator $lineArbitrator): self
     {
-        if (!$this->lineArbitrators->contains($lineArbitrator)) {
-            $this->lineArbitrators[] = $lineArbitrator;
-            $lineArbitrator->addLineGame($this);
+        if (count($this->getLineArbitrators()) < 7 ){
+            if (!$this->lineArbitrators->contains($lineArbitrator)) {
+                $this->lineArbitrators[] = $lineArbitrator;
+                $lineArbitrator->addLineGame($this);
+            }
+        } else {
+            throw new Exception ("Nombre Maximum d'arbitres de ligne atteints");
         }
 
         return $this;
@@ -184,11 +194,14 @@ class Game
 
     public function addBallBoy(BallBoy $ballBoy): self
     {
-        if (!$this->ballBoys->contains($ballBoy)) {
-            $this->ballBoys[] = $ballBoy;
-            $ballBoy->addGame($this);
+        if (count($this->getBallBoys()) < 6 ){
+            if (!$this->ballBoys->contains($ballBoy)) {
+                $this->ballBoys[] = $ballBoy;
+                $ballBoy->addGame($this);
+            }
+        } else {
+            throw new Exception('Nombre de ballboy maximum atteint');
         }
-
         return $this;
     }
 
@@ -211,9 +224,13 @@ class Game
 
     public function addPlayer(Player $player): self
     {
-        if (!$this->players->contains($player)) {
-            $this->players[] = $player;
-            $player->addGame($this);
+        if ($this->getIsDouble()){
+            throw new Exception ("Un match double ne contient pas de joueurs seuls");
+        } else{
+            if (!$this->players->contains($player)) {
+                $this->players[] = $player;
+                $player->addGame($this);
+            }
         }
 
         return $this;
@@ -250,9 +267,16 @@ class Game
 
     public function addTeam(Team $team): self
     {
-        if (!$this->teams->contains($team)) {
-            $this->teams[] = $team;
+        if ((!$this->getIsDouble())){
+            throw new Exception ("Impossible de mettre une équipe dans un match simple");           
+        } else {
+            if (count($this->getTeams())<2){
+                if (!$this->teams->contains($team)) {
+                    $this->teams[] = $team;
+                }
+            }
         }
+
 
         return $this;
     }
@@ -275,6 +299,19 @@ class Game
 
         return $this;
     }
+
+    public function getIsDouble(): ?bool
+    {
+        return $this->isDouble;
+    }
+
+    public function setIsDouble(bool $isDouble): self
+    {
+        $this->isDouble = $isDouble;
+
+        return $this;
+    }
+
     public function __toString()
     {
         return ($this->id.' '.$this->date.' '.$this->hour);

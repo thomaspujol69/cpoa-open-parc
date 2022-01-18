@@ -99,7 +99,7 @@ class Team
 
     public function __toString()
     {
-        
+      //  return "";
         return ($this->players[0]->getLastName().' '.$this->players[1]->getLastName());
     }
 }
