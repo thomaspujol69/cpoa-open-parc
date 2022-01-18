@@ -160,8 +160,32 @@ class Game
 
     public function setChairArbitrator(?Arbitrator $chairArbitrator): self
     {
-        $this->chairArbitrator = $chairArbitrator;
+        if($this->chairArbitrator != null){
+            if (!$this->getIsDouble()){
+                $this->chairArbitrator->setNbDoubleMatchs($this->chairArbitrator->getNbDoubleMatchs()-1);
+            } else {
+                $this->chairArbitrator->setNbSimpleMatchs($this->chairArbitrator->getNbSimpleMatchs()-1);
+            }
+        }
 
+        
+        if ($this->getIsDouble()){
+            if ($chairArbitrator->getNbDoubleMatchs()<2){
+                $chairArbitrator->setNbDoubleMatchs($chairArbitrator->getNbDoubleMatchs()+1);
+                $this->chairArbitrator = $chairArbitrator;
+            } else{
+                throw new Exception ("cet arbitre a fait assez de double, laissez le dormir");
+            }
+
+        } else {
+            if ($chairArbitrator->getNbSimpleMatchs()<2){
+                $chairArbitrator->setNbSimpleMatchs($chairArbitrator->getNbSimpleMatchs()+1);
+                $this->chairArbitrator = $chairArbitrator;
+            } else {
+                throw new Exception ("il a fait assez de simple.");
+            }
+
+        }
         return $this;
     }
 
@@ -179,11 +203,6 @@ class Game
             if (!$this->lineArbitrators->contains($lineArbitrator)) {
                 $this->lineArbitrators[] = $lineArbitrator;
                 $lineArbitrator->addLineGame($this);
-                if (!$this->getIsDouble()){
-                    $lineArbitrator->setNbDoubleMatchs($lineArbitrator->getNbDoubleMatchs()+1);
-                } else {
-                $lineArbitrator->setNbSimpleMatchs($lineArbitrator->getNbSimpleMatchs()+1);
-                }
             }
         } else {
             throw new Exception ("Nombre Maximum d'arbitres de ligne atteints");
