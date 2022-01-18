@@ -252,8 +252,12 @@ class Game
 
     public function setCourt(?Court $court): self
     {
-        $this->court = $court;
-
+        if ($this->getIsFinal() && !$court->getIsMain()){
+            throw new Exception ("le court de la finale doit être le cours principal");
+        } else {
+    
+            $this->court = $court;
+        }
         return $this;
     }
 
