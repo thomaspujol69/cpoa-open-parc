@@ -20,11 +20,13 @@ class TicketReservationType extends AbstractType
                     'mapped' => false,
                     'attr' => array('value' => 1, 'min' => 1, 'max' => 50)
                 ))
-            ->add('promoCode', TextType::class)
+            ->add('promoCode', TextType::class, [])
             ->add('ticketType', CheckboxType::class, array(
                 'label' => 'Catégorie 1'
             ))
         ;
+        $builder->get('promoCode')->setRequired(false);
+        $builder->get('ticketType')->setRequired(false);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
