@@ -12,7 +12,7 @@ class TicketTypeFixtures extends Fixture
     {
         $tt = new TicketType();
         $tt->setLabel("Categorie 1");
-        $tt->setPrice(100); // pourcentage
+        $tt->setPricePercentage(100); // pourcentage
         $manager->persist($tt);
 
         $tt = new TicketType();
@@ -29,7 +29,7 @@ class TicketTypeFixtures extends Fixture
 
         $tt = new TicketType();
         $tt->setLabel("Licencié");
-        $tt->setPrice(83);
+        $tt->setPricePercentage(83);
         $manager->persist($tt);
 
         $manager->flush();

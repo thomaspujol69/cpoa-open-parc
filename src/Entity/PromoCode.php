@@ -39,6 +39,11 @@ class PromoCode
      */
     private $tickets;
 
+    /**
+     * @ORM\OneToOne(targetEntity=TicketType::class, cascade={"persist", "remove"})
+     */
+    private $ticketType;
+
     public function __construct()
     {
         $this->tickets = new ArrayCollection();
@@ -118,5 +123,17 @@ class PromoCode
     public function __toString()
     {
         return ($this->label.' '.$this->code.' '.$this->promoPercentage);
+    }
+
+    public function getTicketType(): ?TicketType
+    {
+        return $this->ticketType;
+    }
+
+    public function setTicketType(?TicketType $ticketType): self
+    {
+        $this->ticketType = $ticketType;
+
+        return $this;
     }
 }

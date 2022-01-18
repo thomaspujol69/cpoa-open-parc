@@ -27,7 +27,7 @@ class TicketType
     /**
      * @ORM\Column(type="float", nullable=true)
      */
-    private $price = null;
+    private $pricePercentage = null;
 
     /**
      * @ORM\OneToMany(targetEntity=Ticket::class, mappedBy="ticketType")
@@ -61,14 +61,14 @@ class TicketType
         return $this;
     }
 
-    public function getPrice(): ?float
+    public function getPricePercentage(): ?float
     {
-        return $this->price;
+        return $this->pricePercentage;
     }
 
-    public function setPrice(float $price): self
+    public function setPricePercentage(float $price): self
     {
-        $this->price = $price;
+        $this->pricePercentage = $price;
 
         return $this;
     }
