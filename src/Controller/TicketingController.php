@@ -88,8 +88,14 @@ class TicketingController extends AbstractController
 
         if($pc!=null){
             // Il faut appliquer le promo code
-            $prct = $pc->getTicketType();
-            $cp=$cp*$prct/100;
+            
+            $prct = $pc[0]->getTicketType(); // On prend le 1er car unique
+            if ($prct!=null){
+                $prct = $prct->getPricePercentage();
+                if($prct!=null && is_numeric($prct) && $prct<200 && $prct>0){
+                    $cp=$cp*$prct/100;
+                }
+            }
         }
 
         //$cp
