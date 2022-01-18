@@ -211,7 +211,7 @@ form[name="ticket_reservation"]{
         margin-left: 25%;
         margin-right: 25%;
     } 
-    #price{
+    #price, #places{
         display: block !important;
         @extend label, .required;
     }

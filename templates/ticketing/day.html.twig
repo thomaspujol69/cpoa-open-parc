@@ -12,7 +12,8 @@
 <div class="col-md pt-5 lightprimary">
     <div class="pt-5 pb-5 mb-5 border dim500 center">
         {{ form_start(form) }}
-                    {{ form_label(form) }}
+            {{ form_label(form) }} 
+            <h6>{{ day.date|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY")|capitalize }}</h6>
             <div class="ticket_reservation">
                 {{ form_errors(form) }}
                 <div>
@@ -24,15 +25,18 @@
                     {{ form_widget(form.promoCode) }}
                 </div>
                 <div>
-                    {{ form_label(form.ticketType) }}
+                    {#{ form_label(form.ticketType) }#}
+                    <span>Catégorie 2</span>
                     <label class="switch">
                         {{ form_widget(form.ticketType) }}
                         <span class="slider round"></span>
                     </label>
+                    <span>Catégorie 1</span>
                     {{ form_help(form) }}
                 </div>
             </div>
             <p id="price">Prix : <span id="displayPrice">{{ ppp2 }}</span>€</p>
+            <p id="places">Places disponibles : <span id="placesDis">{{ nbDispoPlaces2 }}</span></p>
             <button type='commit' class='btn button'>Réserver</button>
         {{ form_end(form) }}
     </div>
@@ -46,13 +50,24 @@
 <script>
     const ticket_reservation_quantity = document.getElementById('ticket_reservation_quantity');
     const displayPrice = document.getElementById('displayPrice');
+    const displayDispo = document.getElementById('placesDis');
     const checkCat = document.getElementById('ticket_reservation_ticketType');
     let fctCalcPrice = (event) => {
+        if(checkCat.checked){
+            displayDispo.textContent = {{ nbDispoPlaces1 }};
+            if(ticket_reservation_quantity.value>{{ nbDispoPlaces1 }}){
+                ticket_reservation_quantity.value={{ nbDispoPlaces1 }};
+            }
+        }else{
+            displayDispo.textContent = {{ nbDispoPlaces2 }};
+            if(ticket_reservation_quantity.value>{{ nbDispoPlaces2 }}){
+                ticket_reservation_quantity.value={{ nbDispoPlaces2 }};
+            }
+        }
         let v = (ticket_reservation_quantity.value*{{ ppp2 }}).toString();
         if(checkCat.checked){
             v = (ticket_reservation_quantity.value*{{ ppp1 }}).toString();
         }
-        
         displayPrice.textContent  = (v>=0) ? v : 0;
     }
 

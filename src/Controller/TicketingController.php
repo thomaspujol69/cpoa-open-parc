@@ -38,11 +38,14 @@ class TicketingController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             
         }
-        $nbDispoPlaces = 1;
+        $nbDispoPlaces1 = 1;
+        $nbDispoPlaces2 = 2;
         $ppp = 1;
         return $this->render('ticketing/day.html.twig', [
             'form' => $form->createView(),
-            'nbDispoPlaces' => $nbDispoPlaces,
+            'day' => $day,
+            'nbDispoPlaces1' => $nbDispoPlaces1,
+            'nbDispoPlaces2' => $nbDispoPlaces2,
             'ppp1' => $day->getCat1Price(),
             'ppp2' => $day->getCat2Price()
         ]);
