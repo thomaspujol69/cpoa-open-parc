@@ -48,7 +48,18 @@ class DayRepository extends ServiceEntityRepository
         ;
     }
     */
-
+    /**
+     * @return Day Returns a Day
+     */
+    public function findOneByDate($value): ?Day
+    {
+        return $this->createQueryBuilder('d')
+            ->andWhere('d.date = :date')
+            ->setParameter('date', $value)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
     /*
     public function findOneBySomeField($value): ?Day
     {

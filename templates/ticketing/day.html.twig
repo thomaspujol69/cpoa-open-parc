@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation Open Parc{% endblock %}
+
+{% block body %}
+{% include 'common/header.html' %}
+
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+<div class="col-md pt-5 lightprimary">
+    <div class="pt-5 pb-5 mb-5 border dim500 center">
+        {{ form_start(form) }}
+                    {{ form_label(form) }}
+            <div class="ticket_reservation">
+                {{ form_errors(form) }}
+                <div>
+                    {{ form_label(form.quantity) }}
+                    {{ form_widget(form.quantity) }}
+                </div>
+                <div>
+                    {{ form_label(form.promoCode) }}
+                    {{ form_widget(form.promoCode) }}
+                </div>
+                <div>
+                    {{ form_label(form.ticketType) }}
+                    <label class="switch">
+                        {{ form_widget(form.ticketType) }}
+                        <span class="slider round"></span>
+                    </label>
+                    {{ form_help(form) }}
+                </div>
+            </div>
+            <p id="price">Prix : <span id="displayPrice">{{ ppp2 }}</span>€</p>
+            <button type='commit' class='btn button'>Réserver</button>
+        {{ form_end(form) }}
+    </div>
+</div>
+
+{% include 'common/footer.html' %}
+
+{% endblock %}
+
+{% block javascript %}
+<script>
+    const ticket_reservation_quantity = document.getElementById('ticket_reservation_quantity');
+    const displayPrice = document.getElementById('displayPrice');
+    const checkCat = document.getElementById('ticket_reservation_ticketType');
+    let fctCalcPrice = (event) => {
+        let v = (ticket_reservation_quantity.value*{{ ppp2 }}).toString();
+        if(checkCat.checked){
+            v = (ticket_reservation_quantity.value*{{ ppp1 }}).toString();
+        }
+        
+        displayPrice.textContent  = (v>=0) ? v : 0;
+    }
+
+    ticket_reservation_quantity.addEventListener('change', fctCalcPrice);
+    checkCat.addEventListener('change', fctCalcPrice);
+</script>
+{% endblock %}
