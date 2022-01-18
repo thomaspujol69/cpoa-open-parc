@@ -31,14 +31,14 @@ class TicketingController extends AbstractController
         ]);
     }
 
-    #[Route('/billetterie/{date}', name: 'selectTicket')]
+    #[Route('/billetterie/{date}', name: 'selectTicket', methods: ['get'])]
     public function selectTicket(Request $request, $date, DayRepository $drep, TicketRepository $trep, TicketTypeRepository $ttrep): Response
     {
         $day = $drep->findOneByDate($date);
         $ticket = new \App\Entity\Ticket();
         $form = $this->createForm(TicketReservationType::class, $ticket);
         if ($form->isSubmitted() && $form->isValid()) {
-            print_r($form);
+            print_r("coucou");
         }
         $c1 = $ttrep->findByLabel("Catégorie 1");
         $c2 = $ttrep->findByLabel("Catégorie 2");
@@ -54,6 +54,26 @@ class TicketingController extends AbstractController
             'nbDispoPlaces2' => $nbDispoPlaces2,
             'ppp1' => $day->getCat1Price(),
             'ppp2' => $day->getCat2Price()
+        ]);
+    }
+    #[Route('/billetterie/{date}', name: 'buyTicket', methods: ['post'])]
+    public function buyTicket(Request $request, $date, DayRepository $drep, TicketRepository $trep, TicketTypeRepository $ttrep): Response
+    {
+        $day = $drep->findOneByDate($date);
+        // ticket_reservation[quantity] ticket_reservation[promoCode]
+        
+        if ($request->request->get('ticket_reservation[ticketType]') != 0){
+            $c = $ttrep->findByLabel("Catégorie 1");
+        }else{
+            $c = $ttrep->findByLabel("Catégorie 2");
+        }
+        $nbDispoPlaces1 = $day->getCat1DispPl() - $trep->countByTicketType($c);
+        $c1p = $day->getCat1Price();
+        $c2p = $day->getCat2Price();
+        return $this->render('ticketing/book.html.twig', [
+            'day' => $day,
+            'ppp' => 1,
+            'total' => 2 
         ]);
     }
 }

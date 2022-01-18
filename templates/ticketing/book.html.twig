@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réserver - {{ day.date|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY")|capitalize }}{% endblock %}
+
+{% block body %}
+{% include 'common/header.html' %}
+
+<div class="col-md pt-5 lightprimary">
+    <div class="pt-5 pb-5 mb-5 border dim500 center">
+        <h6>{{ day.date|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY")|capitalize }}</h6>
+    </div>
+</div>
+
+{% include 'common/footer.html' %}
+
+{% endblock %}
+
+{% block javascript %}
+    
+{% endblock %}
