@@ -88,7 +88,8 @@ class TicketingController extends AbstractController
 
         if($pc!=null){
             // Il faut appliquer le promo code
-            //$prct = $pc->get
+            $prct = $pc->getTicketType();
+            $cp=$cp*$prct/100;
         }
 
         //$cp
@@ -96,8 +97,8 @@ class TicketingController extends AbstractController
         return $this->render('ticketing/book.html.twig', [
             'day' => $day,
             'quantity' => $qt,
-            'ppp' => 1,
-            'total' => 2 
+            'ppp' => $cp,
+            'total' => $cp*$qt
         ]);
     }
 }
