@@ -236,6 +236,12 @@ form[name="ticket_reservation"]{
         margin-left: 25%;
         margin-right: 25%;
     } 
+    div{
+        margin-bottom: 10px;
+    }
+    #displayPrice, #placesDis{
+        font-weight: bold;
+    }
     #price, #places{
         display: block !important;
         @extend label, .required;
@@ -307,6 +313,17 @@ form[name="ticket_reservation"]{
     .slider.round:before {
         border-radius: 50%;
     }
+
+    .button {
+        display : flex;
+        margin : 0 auto;
+        border : 2px solid black !important;
+    }
+    
+    .button:hover {
+        color : white !important;
+        background-color : $lightprimary;
+    }
 }
 
 #ticketing{
@@ -319,7 +336,6 @@ form[name="ticket_reservation"]{
         width: 340px !important;
         height: 200px !important;
         margin: 1em;
-        //margin-left: 100px;
     }
 }
 
