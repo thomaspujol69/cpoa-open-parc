@@ -171,7 +171,7 @@ class Game
         
         if ($this->getIsDouble()){
             if ($chairArbitrator->getNationality()==$this->teams[0]->getPLayerOne()->getNationality() || $chairArbitrator->getNationality()==$this->teams[0]->getPLayerTwo()->getNationality() ||$chairArbitrator->getNationality()==$this->teams[1]->getPLayerOne()->getNationality() || $chairArbitrator->getNationality()==$this->teams[1]->getPLayerTwo()->getNationality()){
-                throw new Exception ("la nationalité de l'arbire doit différer de celles des joueurs");
+                throw new Exception ("la nationalité de l'arbitre doit différer de celles des joueurs");
             }
             else if ($chairArbitrator->getNbDoubleMatchs()<2){
                 $chairArbitrator->setNbDoubleMatchs($chairArbitrator->getNbDoubleMatchs()+1);
@@ -182,7 +182,7 @@ class Game
 
         } else {
             if ($chairArbitrator->getNationality()==$this->players[0]->getNationality() || $chairArbitrator->getNationality()==$this->players[1]->getNationality()){
-                throw new Exception ("la nationalité de l'arbire doit différer de celles des joueurs");
+                throw new Exception ("la nationalité de l'arbitre doit différer de celles des joueurs");
             } else if ($chairArbitrator->getNbSimpleMatchs()<2){
                 $chairArbitrator->setNbSimpleMatchs($chairArbitrator->getNbSimpleMatchs()+1);
                 $this->chairArbitrator = $chairArbitrator;
