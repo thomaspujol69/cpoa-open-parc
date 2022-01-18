@@ -4,6 +4,8 @@ namespace App\Controller\Admin;
 
 use App\Entity\PromoCode;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 
 class PromoCodeCrudController extends AbstractCrudController
 {
@@ -12,14 +14,16 @@ class PromoCodeCrudController extends AbstractCrudController
         return PromoCode::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            Field::new('label'),
+            Field::new('code'),
+
+            AssociationField::new('ticketType')
+            ->setFormTypeOptions([
+            'by_reference' => false
+        ])
         ];
     }
-    */
 }

@@ -30,11 +30,6 @@ class PromoCode
     private $code;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $promoPercentage;
-
-    /**
      * @ORM\OneToMany(targetEntity=Ticket::class, mappedBy="promoCode")
      */
     private $tickets;
@@ -74,18 +69,6 @@ class PromoCode
     public function setCode(string $code): self
     {
         $this->code = $code;
-
-        return $this;
-    }
-
-    public function getPromoPercentage(): ?int
-    {
-        return $this->promoPercentage;
-    }
-
-    public function setPromoPercentage(int $promoPercentage): self
-    {
-        $this->promoPercentage = $promoPercentage;
 
         return $this;
     }
