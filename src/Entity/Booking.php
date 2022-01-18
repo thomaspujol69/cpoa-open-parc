@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Config\Definition\Exception\Exception;
 use App\Repository\BookingRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -61,7 +62,11 @@ class Booking
 
     public function setHourBooking(string $hourBooking): self
     {
-        $this->hourBooking = $hourBooking;
+        if ($hourBooking!="10h" && $hourBooking!="12h" && $hourBooking!="14h" && $hourBooking!="16h"){
+            throw new Exception ("L'horaire doit être : 10h, 12h, 14h ou 16h");
+        } else {
+            $this->hourBooking = $hourBooking;
+        }
 
         return $this;
     }

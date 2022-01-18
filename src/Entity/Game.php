@@ -112,7 +112,12 @@ class Game
 
     public function setDate(\DateTimeInterface $date): self
     {
-        $this->date = $date;
+        
+        if ($this->getIsFinal() && date("D",$date->getTimeStamp()) != "Sun"){
+            throw new Exception ("La finale se fait forcément un dimanche");
+        } else {
+            $this->date = $date;
+        }
 
         return $this;
     }
