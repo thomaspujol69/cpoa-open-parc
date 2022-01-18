@@ -6,6 +6,7 @@ use App\Entity\Game;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 
 class GameCrudController extends AbstractCrudController
 {
@@ -21,7 +22,12 @@ class GameCrudController extends AbstractCrudController
             Field::new('isFinal'),
             Field::new('isDouble'),
             Field::new('date'),
-            Field::new('hour'),
+            ChoiceField::new('hour')->setChoices([
+                '10:00' => '10:00',
+                '12:00' => '12:00',
+                '14:00' => '14:00',
+                '16:00' => '16:00'
+            ]),
             Field::new('score'),
 
             AssociationField::new('players')

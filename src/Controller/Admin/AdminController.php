@@ -19,6 +19,7 @@ use App\Entity\Game;
 use App\Entity\PromoCode;
 use App\Entity\Ticket;
 use App\Entity\TicketType;
+use App\Entity\Day;
 
 
 class AdminController extends AbstractDashboardController
@@ -59,7 +60,8 @@ class AdminController extends AbstractDashboardController
             MenuItem::linkToCrud('Games', 'fas fa-trophy', Game::class),
             MenuItem::linkToCrud('Tickets', '<i class="fas fa-ticket-alt', Ticket::class),
             MenuItem::linkToCrud('Ticket Types', 'fas fa-clipboard-list', TicketType::class),
-            MenuItem::linkToCrud('Promo Codes', 'fas fa-percentage', PromoCode::class)
+            MenuItem::linkToCrud('Promo Codes', 'fas fa-percentage', PromoCode::class),
+            MenuItem::linkToCrud('Days', 'fas fa-users', Day::class)
         ];
     }
 }
