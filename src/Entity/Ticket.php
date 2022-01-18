@@ -79,7 +79,6 @@ class Ticket
     public function setTicketType(?TicketType $ticketType): self
     {
         $this->ticketType = $ticketType;
-
         return $this;
     }
 
