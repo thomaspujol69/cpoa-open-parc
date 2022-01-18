@@ -141,6 +141,18 @@ class Game
         return $this;
     }
 
+    public function getIsDouble(): ?bool
+    {
+        return $this->isDouble;
+    }
+
+    public function setIsDouble(bool $isDouble): self
+    {
+        $this->isDouble = $isDouble;
+
+        return $this;
+    }
+
     public function getChairArbitrator(): ?Arbitrator
     {
         return $this->chairArbitrator;
@@ -167,6 +179,11 @@ class Game
             if (!$this->lineArbitrators->contains($lineArbitrator)) {
                 $this->lineArbitrators[] = $lineArbitrator;
                 $lineArbitrator->addLineGame($this);
+                if (!$this->getIsDouble()){
+                    $lineArbitrator->setNbDoubleMatchs($lineArbitrator->getNbDoubleMatchs()+1);
+                } else {
+                $lineArbitrator->setNbSimpleMatchs($lineArbitrator->getNbSimpleMatchs()+1);
+                }
             }
         } else {
             throw new Exception ("Nombre Maximum d'arbitres de ligne atteints");
@@ -300,18 +317,6 @@ class Game
     public function setDay(?Day $day): self
     {
         $this->day = $day;
-
-        return $this;
-    }
-
-    public function getIsDouble(): ?bool
-    {
-        return $this->isDouble;
-    }
-
-    public function setIsDouble(bool $isDouble): self
-    {
-        $this->isDouble = $isDouble;
 
         return $this;
     }
