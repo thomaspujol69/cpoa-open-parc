@@ -179,7 +179,7 @@ class Game
 
         
         if ($this->getIsDouble()){
-            if ($chairArbitrator->getNationality()==$this->teams[0]->getPLayerOne()->getNationality() || $chairArbitrator->getNationality()==$this->teams[0]->getPLayerTwo()->getNationality() ||$chairArbitrator->getNationality()==$this->teams[1]->getPLayerOne()->getNationality() || $chairArbitrator->getNationality()==$this->teams[1]->getPLayerTwo()->getNationality()){
+            if ($chairArbitrator->getNationality()==$this->teams[0]->getPlayerOne()->getNationality() || $chairArbitrator->getNationality()==$this->teams[0]->getPlayerTwo()->getNationality() ||$chairArbitrator->getNationality()==$this->teams[1]->getPlayerOne()->getNationality() || $chairArbitrator->getNationality()==$this->teams[1]->getPlayerTwo()->getNationality()){
                 throw new Exception ("la nationalité de l'arbitre doit différer de celles des joueurs");
             }
             else if ($chairArbitrator->getNbDoubleMatchs()<2){
@@ -213,7 +213,10 @@ class Game
 
     public function addLineArbitrator(Arbitrator $lineArbitrator): self
     {
-        if (count($this->getLineArbitrators()) < 7 ){
+        if ($lineArbitrator==$this->getChairArbitrator()){
+            throw new Exception ("Ben voyons Timothé, un arbitre ne peut pas être à la fois de ligne et de chaise !!");
+        }
+        else if (count($this->getLineArbitrators()) < 7 ){
             if (!$this->lineArbitrators->contains($lineArbitrator)) {
                 $this->lineArbitrators[] = $lineArbitrator;
                 $lineArbitrator->addLineGame($this);
