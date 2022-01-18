@@ -122,38 +122,46 @@ body{
 
 #registration_form{
     label {
-        margin-right : 10px;
+        //margin-right : 10px;
         font-weight: normal !important;
         text-transform: none !important;
     }
 
     #registration_form_email{
-        margin-left: 34px;
+        margin-left: 44px;
     }
 
     #registration_form_plainPassword{
-        margin-left: 5px;
+        margin-left: 15px;
     }
 
     #registration_form_firstName{
-        margin-left: -2px;
+        margin-left: 8px;
+    }
+
+    #registration_form_lastName{
+        margin-left: 10px;
     }
 }
 
-.button {
-    margin-left: 10%;
-    border : 2px solid black !important;
-}
+#register_form {
+    .button {
+        margin-left: 10em;
+        border : 2px solid black !important;
+    }
+    
+    .button:hover {
+        color : white !important;
+        background-color : $lightprimary;
+    }
 
-.button:hover {
-    color : white !important;
-    background-color : $lightprimary;
-}
-
-label.required{
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+    label.required{
+        margin : auto;
+        //display : block;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
 }
 
 .terms{
@@ -171,7 +179,7 @@ label.required{
 //page login
 #login_form {
     .logform{
-        margin-left : 23%;
+        margin : 0 auto;
         margin-bottom: 13px;
     }
 
@@ -185,6 +193,16 @@ label.required{
 
     .margePassword{
         margin-left : 12px;
+    }
+
+    .button {
+        margin-left: 10em;
+        border : 2px solid black !important;
+    }
+    
+    .button:hover {
+        color : white !important;
+        background-color : $lightprimary;
     }
 }
 
@@ -204,6 +222,7 @@ label.required{
     width : 50px;
 }
 
+//page ticketing
 form[name="ticket_reservation"]{
     margin-left: 10%;
     margin-right: 10%;
@@ -284,7 +303,6 @@ form[name="ticket_reservation"]{
     }
 }
 
-//page ticketing
 #ticketing{
     display :flex;
     flex-wrap: wrap;
