@@ -244,6 +244,7 @@ form[name="ticket_reservation"]{
     }
     #price, #places{
         display: block !important;
+        margin-bottom: 15px;
         @extend label, .required;
     }
     #ticket_reservation_promoCode{
@@ -255,8 +256,8 @@ form[name="ticket_reservation"]{
     .switch {
         position: relative;
         display: inline-block;
-        width: 51px !important;
-        height: 25px;
+        width: 49px !important;
+        height: 21px;
     }
     
     /* Hide default HTML checkbox */
@@ -282,8 +283,8 @@ form[name="ticket_reservation"]{
     .slider:before {
         position: absolute;
         content: "";
-        height: 21px;
-        width: 21px;
+        height: 17px;
+        width: 19px;
         left: 2px;
         bottom: 2px;
         background-color: white;
@@ -307,7 +308,7 @@ form[name="ticket_reservation"]{
         
         /* Rounded sliders */
     .slider.round {
-        border-radius: 34px;
+        border-radius: 29px;
     }
         
     .slider.round:before {
