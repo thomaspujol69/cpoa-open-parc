@@ -314,6 +314,6 @@ class Game
 
     public function __toString()
     {
-        return ($this->id.' '.$this->date.' '.$this->hour);
+        return ($this->id.' '.$this->hour);
     }
 }
