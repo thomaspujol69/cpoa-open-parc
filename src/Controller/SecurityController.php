@@ -17,7 +17,10 @@ class SecurityController extends AbstractController
     {
         if ($this->getUser()) {
             $tpath = $request->query->get('_target_path');
-            return $this->redirectToRoute(($tpath!=null) ? $tpath : 'index'); // Par défaut, on renvoie sur l'index
+            if($tpath!=null){
+                return $this->redirect($tpath);
+            }
+            return $this->redirectToRoute('index'); // Par défaut, on renvoie sur l'index
         }
 
         // get the login error if there is one
