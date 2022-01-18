@@ -170,7 +170,10 @@ class Game
 
         
         if ($this->getIsDouble()){
-            if ($chairArbitrator->getNbDoubleMatchs()<2){
+            if ($chairArbitrator->getNationality()==$this->getTeams()->players[0]->getNationality()){
+                throw new Exception ("la nationalité de l'arbire doit différer de celles des joueurs");
+            }
+            else if ($chairArbitrator->getNbDoubleMatchs()<2){
                 $chairArbitrator->setNbDoubleMatchs($chairArbitrator->getNbDoubleMatchs()+1);
                 $this->chairArbitrator = $chairArbitrator;
             } else{
@@ -178,7 +181,9 @@ class Game
             }
 
         } else {
-            if ($chairArbitrator->getNbSimpleMatchs()<2){
+            if ($chairArbitrator->getNationality()==$this->players[0]->getNationality()){
+                throw new Exception ("la nationalité de l'arbire doit différer de celles des joueurs");
+            } else if ($chairArbitrator->getNbSimpleMatchs()<2){
                 $chairArbitrator->setNbSimpleMatchs($chairArbitrator->getNbSimpleMatchs()+1);
                 $this->chairArbitrator = $chairArbitrator;
             } else {
@@ -230,7 +235,7 @@ class Game
 
     public function addBallBoy(BallBoy $ballBoy): self
     {
-        if (count($this->getBallBoys()) < 6 ){
+        if (count($this->getBallBoys()) < 12 ){
             if (!$this->ballBoys->contains($ballBoy)) {
                 $this->ballBoys[] = $ballBoy;
                 $ballBoy->addGame($this);
