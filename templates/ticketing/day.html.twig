@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Réservation Open Parc{% endblock %}
+{% block title %}Réserver - {{ day.date|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY")|capitalize }}{% endblock %}
 
 {% block body %}
 {% include 'common/header.html' %}
