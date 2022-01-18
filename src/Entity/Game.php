@@ -124,7 +124,11 @@ class Game
 
     public function setHour(string $hour): self
     {
-        $this->hour = $hour;
+        if ($hour!="10h" && $hour!="12h" && $hour!="14h" && $hour!="16h"){
+            throw new Exception ("L'horaire doit être : 10h, 12h, 14h ou 16h");
+        } else {
+            $this->hour = $hour;
+        }
 
         return $this;
     }
