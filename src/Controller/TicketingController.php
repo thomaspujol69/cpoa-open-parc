@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
 use App\Repository\DayRepository;
 use App\Repository\TicketRepository;
+use App\Repository\TicketTypeRepository;
 use App\Form\TicketReservationType;
 
 class TicketingController extends AbstractController
@@ -31,7 +32,7 @@ class TicketingController extends AbstractController
     }
 
     #[Route('/billetterie/{date}', name: 'selectTicket')]
-    public function selectTicket(Request $request, $date, DayRepository $drep, TicketRepository $trep): Response
+    public function selectTicket(Request $request, $date, DayRepository $drep, TicketRepository $trep, TicketTypeRepository $ttrep): Response
     {
         $day = $drep->findOneByDate($date);
         $ticket = new \App\Entity\Ticket();
@@ -39,10 +40,13 @@ class TicketingController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             print_r($form);
         }
-        $trep->countByTicketType(1);
-        $nbDispoPlaces1 = $drep->countByPlacesDispo(1);
-        $nbDispoPlaces2 = $drep->countByPlacesDispo(2);
-        $ppp = 1;
+        $c1 = $ttrep->findByLabel("Catégorie 1");
+        $c2 = $ttrep->findByLabel("Catégorie 2");
+
+        // Le nombre de places par catégories moins le nombre de places réservées
+        $nbDispoPlaces1 = $day->getCat1DispPl() - $trep->countByTicketType($c1);
+        $nbDispoPlaces2 = $day->getCat2DispPl() - $trep->countByTicketType($c2);
+
         return $this->render('ticketing/day.html.twig', [
             'form' => $form->createView(),
             'day' => $day,

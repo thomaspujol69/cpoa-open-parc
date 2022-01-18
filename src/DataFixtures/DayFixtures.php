@@ -18,6 +18,8 @@ class DayFixtures extends Fixture
             $d->setBegining($t);
             $d->setCat1Price(30+random_int(0,$i/4)+$i);
             $d->setCat2Price(10+random_int(0,$i/4)+$i);
+            $d->setCat1DispPl(60+random_int(0, 20));
+            $d->setCat2DispPl(100+random_int(0, 20));
             $d->setDescription("Organisateur : ALLIN EVENT");
             $manager->persist($d);
         }
