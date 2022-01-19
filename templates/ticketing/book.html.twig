@@ -12,9 +12,15 @@
             <p>{{quantity}}</p>
             <p>{{ppp}}</p>
             <p>{{total}}</p>
-            <button type='commit' class='btn button'>Réserver</button>
+            <button id="show-load"type='commit' class='btn button'>Réserver</button>
         </div>
     </div>
+</div>
+
+<div id="loader-container">
+  <div class="dot d1"></div>
+  <div class="dot d2"></div>
+  <div class="dot d3"></div>
 </div>
 
 {% include 'common/footer.html' %}
@@ -22,5 +28,17 @@
 {% endblock %}
 
 {% block javascript %}
-
+<script>
+    let btnload = document.getElementById("show-load");
+    let loader = document.getElementById("loader-container");
+    btnload.addEventListener("click", () => {
+      if(getComputedStyle(loader).display == "none"){
+        loader.style.display = "flex";
+        setTimeout(redirect,10000);
+      } 
+    })
+    function redirect(){
+        window.location='../../';
+    }
+</script>
 {% endblock %}

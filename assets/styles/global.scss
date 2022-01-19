@@ -340,7 +340,7 @@ form[name="ticket_reservation"]{
     }
 }
 
-//  form[name="booking_ticket"]{
+//form[name="booking_ticket"]{
     .button {
         display : flex;
         margin : 0 auto;
@@ -352,6 +352,39 @@ form[name="ticket_reservation"]{
         background-color : $lightprimary;
     }
 //}
+
+#loader-container {
+    position: absolute;
+    width: 100vw;
+    height: 200px;
+    display : none;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot{
+    width : 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: black;
+    margin : 0 15px;
+    animation: loader infinite 0.3s alternate;
+}
+
+.d2{
+    animation-delay: 0.05s;
+}
+
+.d3{
+    animation-delay: 0.1s;
+}
+
+@keyframes loader {
+    100%{
+        transform: translateY(-30px);
+    }
+}
+
 
 
 @import "./bootstrap.min.css";
