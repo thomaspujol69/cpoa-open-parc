@@ -7,17 +7,13 @@
 
 <div class="col-md pt-5 lightprimary">
     <div class="pt-5 pb-5 mb-5 border dim500 center">
-        <form method="POST" id="booking_form" action='/billetterie/{{ day.date|format_datetime(locale='fr',pattern="YYYY-MM-dd") }}/reserver'>
+        <div id="booking_form">
+          <h3>Confirmation de réservation</h3>
           <h6>{{ day.date|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY")|capitalize }}</h6>
           <p><b>Quantité commandée : </b>{{quantity}} places</p>
-          <input type="hidden" name="quantity" value="{{quantity}}">
-          <p><b>Prix par place : </b>{{ppp}}€</p>
           <p><b>Total : </b>{{total}}€</p>
-          <input type="hidden" name="ticketType" value="{{ticketType}}">
-          <input type="hidden" name="promoCode" value="{{promoCode}}">
-          <input type="hidden" name="total" value="{{total}}">
-          <button id="show-load" type="button" class='btn button'>Réserver</button>
-        </form>
+          <a type="button" href="{{path("index")}}" class='btn button'>Accueil</a>
+        </div>
     </div>
 </div>
 

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccountController!{% endblock %}
+
+{% block body %}
+{% include 'common/header.html' %}
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        {% for ticket in tickets %}
+            <li>{{ ticket.id }} {{ ticket.day }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% include 'common/footer.html' %}
+{% endblock %}

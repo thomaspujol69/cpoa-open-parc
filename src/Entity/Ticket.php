@@ -103,13 +103,13 @@ class Ticket
     public function setDay(?Day $day): self
     {
         $this->day = $day;
-
+        $this->setDate($day->getDate());
         return $this;
     }
 
     public function __toString()
     {
         
-        return ($this->id.' '.$this->date);
+        return ($this->id.' '.date_format($this->date, "d/M/Y"));
     }
 }
