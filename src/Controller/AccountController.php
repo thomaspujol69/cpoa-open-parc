@@ -17,7 +17,6 @@ class AccountController extends AbstractController
             return $this->redirectToRoute('index_app');
         }
         return $this->render('account/index.html.twig', [
-            'controller_name' => 'AccountController',
             'tickets' => $trep->findByUser($user)
         ]);
     }
