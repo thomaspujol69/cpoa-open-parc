@@ -7,17 +7,20 @@
 
 <div class="col-md pt-5 lightprimary">
     <div class="pt-5 pb-5 mb-5 border dim500 center">
-        <h6>{{ day.date|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY")|capitalize }}</h6>
-        <div>
-            <p>{{quantity}}</p>
-            <p>{{ppp}}</p>
-            <p>{{total}}</p>
-            <button id="show-load"type='commit' class='btn button'>Réserver</button>
-        </div>
+        <form method="POST" id="booking_form" action='./reserver'>
+          <h6>{{ day.date|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY")|capitalize }}</h6>
+          <p><b>Quantité commandée : </b>{{quantity}} places</p>
+          <input type="hidden" name="quantity" value="{{quantity}}">
+          <p><b>Prix par place : </b>{{ppp}}€</p>
+          <p><b>Total : </b>{{total}}€</p>
+          <input type="hidden" name="total" value="{{total}}">
+          <button id="show-load" type="button" class='btn button'>Réserver</button>
+        </form>
     </div>
 </div>
 
 <div id="loader-container">
+  <h1>Paiement en cours </h1>
   <div class="dot d1"></div>
   <div class="dot d2"></div>
   <div class="dot d3"></div>
@@ -34,11 +37,12 @@
     btnload.addEventListener("click", () => {
       if(getComputedStyle(loader).display == "none"){
         loader.style.display = "flex";
-        setTimeout(redirect,10000);
+        setTimeout(redirect,5000);
       } 
     })
     function redirect(){
-        window.location='../../';
+      form = document.getElementById("booking_form");
+      form.submit();
     }
 </script>
 {% endblock %}
