@@ -22,9 +22,9 @@ class GameCrudController extends AbstractCrudController
             Field::new('isFinal'),
             Field::new('isDouble'),
             AssociationField::new('day')
-            ->setFormTypeOptions([
-                'by_reference' => false
-            ]),
+                ->setFormTypeOptions([
+                    'by_reference' => true
+                ]),
             ChoiceField::new('hour')->setChoices([
                 '10:00' => '10:00',
                 '12:00' => '12:00',

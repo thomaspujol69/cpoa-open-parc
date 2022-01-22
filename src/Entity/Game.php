@@ -72,6 +72,7 @@ class Game
 
     /**
      * @ORM\ManyToOne(targetEntity=Day::class, inversedBy="games")
+     * @ORM\JoinColumn(name="day_id", referencedColumnName="id", nullable=false)
      */
     private $day;
 
