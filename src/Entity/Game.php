@@ -351,7 +351,7 @@ class Game
     public function setDay(?Day $day): self
     {
         $this->day = $day;
-
+        $this->setDate($day->getDate());
         return $this;
     }
 
