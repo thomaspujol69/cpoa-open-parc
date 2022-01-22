@@ -10,10 +10,13 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="/tarifs">Tarifs</a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item active">
+                <a class="nav-link" href="/billetterie">Billetterie</a>
+            </li>
+            <li class="nav-item dropdown active">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown
                 </a>
@@ -25,7 +28,7 @@
                 </div>
             </li>
             {% if app.user %}
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{ app.user.email }}
                     </a>
@@ -41,14 +44,14 @@
                     <a class="nav-link" href="/login">S'identifier</a>
                 </li>
             {% endif %}
-            <li class="nav-item disabled">
+            <!--li class="nav-item disabled">
                 <a class="nav-link disabled" href="/login">S'identifier</a>
-            </li>
+            </li-->
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <!--form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Recherche">
             <button class="btn btn-outline-warning my-2 my-sm-0" style="color:black;" type="submit">Rechercher</button>
-        </form>
+        </form-->
         <!-- <i class="panier fas fa-shopping-basket"></i> l'image du panier qui marche pas -->
     </div>
 </nav> 

@@ -197,7 +197,7 @@ class Day
 
     public function __toString()
     {
-        return ($this->id.' '.$this->date);
+        return (date_format($this->date, 'd/m/Y'));
     }
 
     public function getCat1DispPl(): ?int

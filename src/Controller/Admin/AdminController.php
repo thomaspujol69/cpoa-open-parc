@@ -50,18 +50,20 @@ class AdminController extends AbstractDashboardController
     {
         return[
             MenuItem::linktoRoute('Back to the website', 'fas fa-home', 'index'),
+            MenuItem::section('Tennis'),
             MenuItem::linkToCrud('Arbitrators', 'fas fa-flag', Arbitrator::class),
             MenuItem::linkToCrud('Ballboys', 'fas fa-baseball-ball', BallBoy::class),
             MenuItem::linkToCrud('Bookings', 'fas fa-book', Booking::class),
             MenuItem::linkToCrud('Courts', 'far fa-map', Court::class),
             MenuItem::linkToCrud('Players', 'fas fa-running', Player::class),
             MenuItem::linkToCrud('Teams', 'fas fa-users', Team::class),
-            MenuItem::linkToCrud('Users', 'fas fa-user', User::class),
             MenuItem::linkToCrud('Games', 'fas fa-trophy', Game::class),
-            MenuItem::linkToCrud('Tickets', '<i class="fas fa-ticket-alt', Ticket::class),
+            MenuItem::linkToCrud('Days', 'fas fa-users', Day::class),
+            MenuItem::section('Reservation'),
+            MenuItem::linkToCrud('Users', 'fas fa-user', User::class),
+            MenuItem::linkToCrud('Tickets', 'fas fa-ticket-alt', Ticket::class),
             MenuItem::linkToCrud('Ticket Types', 'fas fa-clipboard-list', TicketType::class),
-            MenuItem::linkToCrud('Promo Codes', 'fas fa-percentage', PromoCode::class),
-            MenuItem::linkToCrud('Days', 'fas fa-users', Day::class)
+            MenuItem::linkToCrud('Promo Codes', 'fas fa-percentage', PromoCode::class)
         ];
     }
 }
