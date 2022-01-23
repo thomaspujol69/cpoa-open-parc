@@ -29,6 +29,11 @@ class BallBoy
      */
     private $game;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=BallBoysTeam::class, inversedBy="ballBoys")
+     */
+    private $ballBoysTeam;
+
     public function __construct()
     {
         $this->game = new ArrayCollection();
@@ -78,5 +83,17 @@ class BallBoy
     public function __toString()
     {
         return ($this->id.' '.$this->name);
+    }
+
+    public function getBallBoysTeam(): ?BallBoysTeam
+    {
+        return $this->ballBoysTeam;
+    }
+
+    public function setBallBoysTeam(?BallBoysTeam $ballBoysTeam): self
+    {
+        $this->ballBoysTeam = $ballBoysTeam;
+
+        return $this;
     }
 }
