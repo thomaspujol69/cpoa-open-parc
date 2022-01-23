@@ -18,6 +18,7 @@ class TeamCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
+            Field::new('isWomen'),
             AssociationField::new('players')
             ->setFormTypeOptions([
                 'by_reference' => false

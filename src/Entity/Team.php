@@ -6,6 +6,7 @@ use App\Repository\TeamRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Config\Definition\Exception\Exception;
 
 /**
  * @ORM\Entity(repositoryClass=TeamRepository::class)
@@ -37,7 +38,7 @@ class Team
     /**
      * @ORM\Column(type="boolean")
      */
-    private $isWomen;
+    private $isWomen=false;
 
     public function __construct()
     {
@@ -61,11 +62,18 @@ class Team
 
     public function addPlayer(Player $player): self
     {
-        if (!$this->players->contains($player)) {
-            $this->players[] = $player;
-            $player->setTeam($this);
+        if (count($this->getPlayers())>1){
+            throw new Exception ("une équipe ne contient que deux joueurs");
+        } else if(!$this->getIsWomen() && $player->getIsWomen()){
+            throw new Exception ("Une équipe masculine ne peut pas admettre de joueur féminin");
+        } else if ($this->getIsWomen() && !$player->getIsWomen()) {
+            throw new Exception ("Une équipe féminine ne peut pas admettre de joueur masculin");
+        } else {
+            if (!$this->players->contains($player)) {
+                $this->players[] = $player;
+                $player->setTeam($this);
+            }
         }
-
         return $this;
     }
 
