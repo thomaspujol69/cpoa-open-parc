@@ -54,6 +54,7 @@ class AdminController extends AbstractDashboardController
             MenuItem::section('Tennis'),
             MenuItem::linkToCrud('Arbitrators', 'fas fa-flag', Arbitrator::class),
             MenuItem::linkToCrud('Ballboys', 'fas fa-baseball-ball', BallBoy::class),
+            MenuItem::linkToCrud('BallBoys Teams', 'fas fa-percentage', BallBoysTeam::class),
             MenuItem::linkToCrud('Bookings', 'fas fa-book', Booking::class),
             MenuItem::linkToCrud('Courts', 'far fa-map', Court::class),
             MenuItem::linkToCrud('Players', 'fas fa-running', Player::class),
@@ -64,8 +65,7 @@ class AdminController extends AbstractDashboardController
             MenuItem::linkToCrud('Users', 'fas fa-user', User::class),
             MenuItem::linkToCrud('Tickets', 'fas fa-ticket-alt', Ticket::class),
             MenuItem::linkToCrud('Ticket Types', 'fas fa-clipboard-list', TicketType::class),
-            MenuItem::linkToCrud('Promo Codes', 'fas fa-percentage', PromoCode::class),
-            MenuItem::linkToCrud('BallBoys Teams', 'fas fa-percentage', BallBoysTeam::class)
+            MenuItem::linkToCrud('Promo Codes', 'fas fa-percentage', PromoCode::class)
         ];
     }
 }
