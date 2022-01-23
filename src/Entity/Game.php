@@ -81,6 +81,16 @@ class Game
      */
     private $ballBoysTeams;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Team::class, inversedBy="gamesWinner")
+     */
+    private $teamWinner;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Player::class, inversedBy="gamesWinner")
+     */
+    private $playerWinner;
+
     public function __construct()
     {
         $this->lineArbitrators = new ArrayCollection();
@@ -358,6 +368,30 @@ class Game
         if ($this->ballBoysTeams->removeElement($ballBoysTeam)) {
             $ballBoysTeam->removeGame($this);
         }
+
+        return $this;
+    }
+
+    public function getTeamWinner(): ?Team
+    {
+        return $this->teamWinner;
+    }
+
+    public function setTeamWinner(?Team $teamWinner): self
+    {
+        $this->teamWinner = $teamWinner;
+
+        return $this;
+    }
+
+    public function getPlayerWinner(): ?Player
+    {
+        return $this->playerWinner;
+    }
+
+    public function setPlayerWinner(?Player $playerWinner): self
+    {
+        $this->playerWinner = $playerWinner;
 
         return $this;
     }

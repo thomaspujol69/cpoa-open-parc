@@ -29,10 +29,16 @@ class Team
      */
     private $games;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Game::class, mappedBy="teamWinner")
+     */
+    private $gamesWinner;
+
     public function __construct()
     {
         $this->players = new ArrayCollection();
         $this->games = new ArrayCollection();
+        $this->gamesWinner = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -111,5 +117,35 @@ class Team
     }
     public function getPlayerTwo(){
         return $this->players[1];
+    }
+
+    /**
+     * @return Collection|Game[]
+     */
+    public function getGamesWinner(): Collection
+    {
+        return $this->gamesWinner;
+    }
+
+    public function addGamesWinner(Game $gamesWinner): self
+    {
+        if (!$this->gamesWinner->contains($gamesWinner)) {
+            $this->gamesWinner[] = $gamesWinner;
+            $gamesWinner->setTeamWinner($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGamesWinner(Game $gamesWinner): self
+    {
+        if ($this->gamesWinner->removeElement($gamesWinner)) {
+            // set the owning side to null (unless already changed)
+            if ($gamesWinner->getTeamWinner() === $this) {
+                $gamesWinner->setTeamWinner(null);
+            }
+        }
+
+        return $this;
     }
 }

@@ -49,10 +49,16 @@ class Player
      */
     private $team;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Game::class, mappedBy="playerWinner")
+     */
+    private $gamesWinner;
+
     public function __construct()
     {
         $this->game = new ArrayCollection();
         $this->booking = new ArrayCollection();
+        $this->gamesWinner = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -165,5 +171,35 @@ class Player
     public function __toString()
     {
         return ($this->firstName.' '.$this->lastName);
+    }
+
+    /**
+     * @return Collection|Game[]
+     */
+    public function getGamesWinner(): Collection
+    {
+        return $this->gamesWinner;
+    }
+
+    public function addGamesWinner(Game $gamesWinner): self
+    {
+        if (!$this->gamesWinner->contains($gamesWinner)) {
+            $this->gamesWinner[] = $gamesWinner;
+            $gamesWinner->setPlayerWinner($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGamesWinner(Game $gamesWinner): self
+    {
+        if ($this->gamesWinner->removeElement($gamesWinner)) {
+            // set the owning side to null (unless already changed)
+            if ($gamesWinner->getPlayerWinner() === $this) {
+                $gamesWinner->setPlayerWinner(null);
+            }
+        }
+
+        return $this;
     }
 }
