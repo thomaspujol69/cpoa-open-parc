@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 #[Route('/account')]
 class AccountController extends AbstractController
@@ -36,7 +37,7 @@ class AccountController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('account_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('account_show', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('account/edit.html.twig', [
@@ -48,12 +49,13 @@ class AccountController extends AbstractController
     #[Route('/', name: 'account_delete', methods: ['POST'])]
     public function delete(Request $request, EntityManagerInterface $entityManager): Response
     {
-        $user = $user->getUser();
+        $user = $this->getUser();
         if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
             $entityManager->remove($user);
             $entityManager->flush();
         }
-
-        return $this->redirectToRoute('account_index', [], Response::HTTP_SEE_OTHER);
+        $session = new Session();
+        $session->invalidate();
+        return $this->redirectToRoute('app_logout', [], Response::HTTP_SEE_OTHER);
     }
 }
