@@ -54,6 +54,11 @@ class Player
      */
     private $gamesWinner;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isWomen;
+
     public function __construct()
     {
         $this->game = new ArrayCollection();
@@ -199,6 +204,18 @@ class Player
                 $gamesWinner->setPlayerWinner(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getIsWomen(): ?bool
+    {
+        return $this->isWomen;
+    }
+
+    public function setIsWomen(bool $isWomen): self
+    {
+        $this->isWomen = $isWomen;
 
         return $this;
     }

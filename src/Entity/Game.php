@@ -91,6 +91,11 @@ class Game
      */
     private $playerWinner;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isWomen;
+
     public function __construct()
     {
         $this->lineArbitrators = new ArrayCollection();
@@ -404,6 +409,18 @@ class Game
         }  else {
             throw new Exception ("le gagnant du match doit être un de ses participants");
         }
+        return $this;
+    }
+
+    public function getIsWomen(): ?bool
+    {
+        return $this->isWomen;
+    }
+
+    public function setIsWomen(bool $isWomen): self
+    {
+        $this->isWomen = $isWomen;
+
         return $this;
     }
 }
