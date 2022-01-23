@@ -255,18 +255,18 @@
   <g
      id="node34"
      class="node"
-     transform="translate(-5991.4254,3338.3544)">
+     transform="translate(-5985.4667,3267.7008)">
     <title
        id="title1011">App\Entity\BallBoy</title>
     <polygon
        fill="#fcaf3e"
        stroke="transparent"
-       points="7025.5,-840.5 6865.5,-840.5 6865.5,-859.5 7025.5,-859.5 "
+       points="6865.5,-840.5 6865.5,-859.5 7025.5,-859.5 7025.5,-840.5 "
        id="polygon1013" />
     <polygon
        fill="none"
        stroke="#2e3436"
-       points="7025.5,-840.5 6865.5,-840.5 6865.5,-859.5 7025.5,-859.5 "
+       points="6865.5,-840.5 6865.5,-859.5 7025.5,-859.5 7025.5,-840.5 "
        id="polygon1015" />
     <text
        text-anchor="start"
@@ -280,12 +280,12 @@
     <polygon
        fill="#eeeeec"
        stroke="transparent"
-       points="7025.5,-801.5 6865.5,-801.5 6865.5,-840.5 7025.5,-840.5 "
+       points="6865.5,-801.5 6865.5,-840.5 7025.5,-840.5 7025.5,-801.5 "
        id="polygon1019" />
     <polygon
        fill="none"
        stroke="#2e3436"
-       points="7025.5,-801.5 6865.5,-801.5 6865.5,-840.5 7025.5,-840.5 "
+       points="6865.5,-801.5 6865.5,-840.5 7025.5,-840.5 7025.5,-801.5 "
        id="polygon1021" />
     <text
        text-anchor="start"
@@ -314,12 +314,12 @@
     <polygon
        fill="#eeeeec"
        stroke="transparent"
-       points="7025.5,-707.5 6865.5,-707.5 6865.5,-801.5 7025.5,-801.5 "
+       points="6865.5,-707.5 6865.5,-801.5 7025.5,-801.5 7025.5,-707.5 "
        id="polygon1029" />
     <polygon
        fill="none"
        stroke="#2e3436"
-       points="7025.5,-707.5 6865.5,-707.5 6865.5,-801.5 7025.5,-801.5 "
+       points="6865.5,-707.5 6865.5,-801.5 7025.5,-801.5 7025.5,-707.5 "
        id="polygon1031" />
     <text
        text-anchor="start"
@@ -2400,7 +2400,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2419,9 +2419,9 @@
      inkscape:window-height="1017"
      id="namedview2497"
      showgrid="false"
-     inkscape:zoom="0.1557508"
-     inkscape:cx="3143.5812"
-     inkscape:cy="2244.2178"
+     inkscape:zoom="0.22026489"
+     inkscape:cx="1977.5793"
+     inkscape:cy="3308.1179"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -7203,7 +7203,7 @@
      id="path6005" />
   <path
      style="fill:none;stroke:#000000;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="m 1034.0746,2478.8544 -0.7779,-140.0132"
+     d="m 1141.0323,2479.9045 -0.7779,-140.0132"
      id="path6009" />
   <path
      style="fill:none;stroke:#000000;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -7245,4 +7245,150 @@
      style="fill:none;stroke:#000000;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      d="m 1185.1216,2105.6586 201.0423,3.6115"
      id="path6033" />
+  <g
+     id="node36-5"
+     class="node"
+     transform="translate(-6429.3108,3378.2557)">
+    <title
+       id="title1082">App\Entity\BallBoysTeam</title>
+    <polygon
+       fill="#fcaf3e"
+       stroke="transparent"
+       points="7742,-897.5 7742,-878.5 7558,-878.5 7558,-897.5 "
+       id="polygon1084" />
+    <polygon
+       fill="none"
+       stroke="#2e3436"
+       points="7742,-897.5 7742,-878.5 7558,-878.5 7558,-897.5 "
+       id="polygon1086" />
+    <text
+       text-anchor="start"
+       x="7607"
+       y="-885.90002"
+       font-family="Helvetica, sans-Serif"
+       font-weight="bold"
+       font-size="12px"
+       fill="#2e3436"
+       id="text1088-6">BallBoysTeam</text>
+    <polygon
+       fill="#eeeeec"
+       stroke="transparent"
+       points="7742,-878.5 7742,-839.5 7558,-839.5 7558,-878.5 "
+       id="polygon1090" />
+    <polygon
+       fill="none"
+       stroke="#2e3436"
+       points="7742,-878.5 7742,-839.5 7558,-839.5 7558,-878.5 "
+       id="polygon1092" />
+    <text
+       text-anchor="start"
+       x="7561"
+       y="-867.5"
+       font-family="Helvetica, sans-Serif"
+       font-size="10px"
+       fill="#2e3436"
+       id="text1094">-$id</text>
+    <text
+       text-anchor="start"
+       x="7561"
+       y="-856.5"
+       font-family="Helvetica, sans-Serif"
+       font-size="10px"
+       fill="#2e3436"
+       id="text1096">-$ballBoys</text>
+    <text
+       text-anchor="start"
+       x="7561"
+       y="-845.5"
+       font-family="Helvetica, sans-Serif"
+       font-size="10px"
+       fill="#2e3436"
+       id="text1098">-$games</text>
+    <polygon
+       fill="#eeeeec"
+       stroke="transparent"
+       points="7742,-839.5 7742,-734.5 7558,-734.5 7558,-839.5 "
+       id="polygon1100" />
+    <polygon
+       fill="none"
+       stroke="#2e3436"
+       points="7742,-839.5 7742,-734.5 7558,-734.5 7558,-839.5 "
+       id="polygon1102" />
+    <text
+       text-anchor="start"
+       x="7561"
+       y="-828.5"
+       font-family="Helvetica, sans-Serif"
+       font-size="10px"
+       fill="#2e3436"
+       id="text1104">+__construct()</text>
+    <text
+       text-anchor="start"
+       x="7561"
+       y="-817.5"
+       font-family="Helvetica, sans-Serif"
+       font-size="10px"
+       fill="#2e3436"
+       id="text1106">+getId(): ?int</text>
+    <text
+       text-anchor="start"
+       x="7561"
+       y="-806.5"
+       font-family="Helvetica, sans-Serif"
+       font-size="10px"
+       fill="#2e3436"
+       id="text1108">+getBallBoys(): Collection</text>
+    <text
+       text-anchor="start"
+       x="7561"
+       y="-795.5"
+       font-family="Helvetica, sans-Serif"
+       font-size="10px"
+       fill="#2e3436"
+       id="text1110">+addBallBoy($ballBoy: BallBoy): self</text>
+    <text
+       text-anchor="start"
+       x="7561"
+       y="-784.5"
+       font-family="Helvetica, sans-Serif"
+       font-size="10px"
+       fill="#2e3436"
+       id="text1112">+removeBallBoy($ballBoy: BallBoy): self</text>
+    <text
+       text-anchor="start"
+       x="7561"
+       y="-773.5"
+       font-family="Helvetica, sans-Serif"
+       font-size="10px"
+       fill="#2e3436"
+       id="text1114">+getGames(): Collection</text>
+    <text
+       text-anchor="start"
+       x="7561"
+       y="-762.5"
+       font-family="Helvetica, sans-Serif"
+       font-size="10px"
+       fill="#2e3436"
+       id="text1116">+addGame($game: Game): self</text>
+    <text
+       text-anchor="start"
+       x="7561"
+       y="-751.5"
+       font-family="Helvetica, sans-Serif"
+       font-size="10px"
+       fill="#2e3436"
+       id="text1118">+removeGame($game: Game): self</text>
+    <text
+       text-anchor="start"
+       x="7561"
+       y="-740.5"
+       font-family="Helvetica, sans-Serif"
+       font-size="10px"
+       fill="#2e3436"
+       id="text1120">+__toString()</text>
+  </g>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 1040.2248,2529.0571 h 88.5297"
+     id="path2155" />
 </svg>
