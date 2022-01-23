@@ -100,7 +100,11 @@ class Team
     public function __toString()
     {
       //  return "";
-        return ($this->players[0]->getLastName().' '.$this->players[1]->getLastName());
+        if (!is_null($this->players[0]) && !is_null($this->players[1])){
+            return ($this->players[0]->getLastName().' '.$this->players[1]->getLastName());
+        } else {
+            return ("l'équipe manque de joueurs");
+        }
     }
     public function getPlayerOne(){
         return $this->players[0];

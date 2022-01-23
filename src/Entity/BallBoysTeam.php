@@ -6,6 +6,7 @@ use App\Repository\BallBoysTeamRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Config\Definition\Exception\Exception;
 
 /**
  * @ORM\Entity(repositoryClass=BallBoysTeamRepository::class)
@@ -24,9 +25,15 @@ class BallBoysTeam
      */
     private $ballBoys;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Game::class, inversedBy="ballBoysTeams")
+     */
+    private $games;
+
     public function __construct()
     {
         $this->ballBoys = new ArrayCollection();
+        $this->games = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -44,9 +51,13 @@ class BallBoysTeam
 
     public function addBallBoy(BallBoy $ballBoy): self
     {
-        if (!$this->ballBoys->contains($ballBoy)) {
-            $this->ballBoys[] = $ballBoy;
-            $ballBoy->setBallBoysTeam($this);
+        if (count($this->getBallBoys()) <6 ){
+            if (!$this->ballBoys->contains($ballBoy)) {
+                $this->ballBoys[] = $ballBoy;
+                $ballBoy->setBallBoysTeam($this);
+            }
+        } else {
+            throw new Exception ("seulement 6 ramasseurs par équipe !");
         }
 
         return $this;
@@ -62,5 +73,34 @@ class BallBoysTeam
         }
 
         return $this;
+    }
+
+    /**
+     * @return Collection|Game[]
+     */
+    public function getGames(): Collection
+    {
+        return $this->games;
+    }
+
+    public function addGame(Game $game): self
+    {
+        if (!$this->games->contains($game)) {
+            $this->games[] = $game;
+        }
+
+        return $this;
+    }
+
+    public function removeGame(Game $game): self
+    {
+        $this->games->removeElement($game);
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return ($this->id);
     }
 }

@@ -51,11 +51,6 @@ class Game
     private $lineArbitrators;
 
     /**
-     * @ORM\ManyToMany(targetEntity=BallBoy::class, mappedBy="game")
-     */
-    private $ballBoys;
-
-    /**
      * @ORM\ManyToMany(targetEntity=Player::class, mappedBy="game")
      */
     private $players;
@@ -81,12 +76,17 @@ class Game
      */
     private $isDouble = False;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=BallBoysTeam::class, mappedBy="games")
+     */
+    private $ballBoysTeams;
+
     public function __construct()
     {
         $this->lineArbitrators = new ArrayCollection();
-        $this->ballBoys = new ArrayCollection();
         $this->players = new ArrayCollection();
         $this->teams = new ArrayCollection();
+        $this->ballBoysTeams = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -237,36 +237,6 @@ class Game
     }
 
     /**
-     * @return Collection|BallBoy[]
-     */
-    public function getBallBoys(): Collection
-    {
-        return $this->ballBoys;
-    }
-
-    public function addBallBoy(BallBoy $ballBoy): self
-    {
-        if (count($this->getBallBoys()) < 12 ){
-            if (!$this->ballBoys->contains($ballBoy)) {
-                $this->ballBoys[] = $ballBoy;
-                $ballBoy->addGame($this);
-            }
-        } else {
-            throw new Exception('Nombre de ballboy maximum atteint');
-        }
-        return $this;
-    }
-
-    public function removeBallBoy(BallBoy $ballBoy): self
-    {
-        if ($this->ballBoys->removeElement($ballBoy)) {
-            $ballBoy->removeGame($this);
-        }
-
-        return $this;
-    }
-
-    /**
      * @return Collection|Player[]
      */
     public function getPlayers(): Collection
@@ -359,5 +329,36 @@ class Game
     public function __toString()
     {
         return ($this->id.' '.$this->hour);
+    }
+
+    /**
+     * @return Collection|BallBoysTeam[]
+     */
+    public function getBallBoysTeams(): Collection
+    {
+        return $this->ballBoysTeams;
+    }
+
+    public function addBallBoysTeam(BallBoysTeam $ballBoysTeam): self
+    {
+        if (count($this->getBallBoysTeams()) < 2 ){
+            if (!$this->ballBoysTeams->contains($ballBoysTeam)) {
+                $this->ballBoysTeams[] = $ballBoysTeam;
+                $ballBoysTeam->addGame($this);
+            }
+        } else {
+            throw new Exception ("pas plus de deux équipes de ramasseurs, merci");
+        }
+
+        return $this;
+    }
+
+    public function removeBallBoysTeam(BallBoysTeam $ballBoysTeam): self
+    {
+        if ($this->ballBoysTeams->removeElement($ballBoysTeam)) {
+            $ballBoysTeam->removeGame($this);
+        }
+
+        return $this;
     }
 }

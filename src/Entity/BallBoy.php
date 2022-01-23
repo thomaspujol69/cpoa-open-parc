@@ -25,18 +25,12 @@ class BallBoy
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Game::class, inversedBy="ballBoys")
-     */
-    private $game;
-
-    /**
      * @ORM\ManyToOne(targetEntity=BallBoysTeam::class, inversedBy="ballBoys")
      */
     private $ballBoysTeam;
 
     public function __construct()
     {
-        $this->game = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -52,30 +46,6 @@ class BallBoy
     public function setName(?string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Game[]
-     */
-    public function getGame(): Collection
-    {
-        return $this->game;
-    }
-
-    public function addGame(Game $game): self
-    {
-        if (!$this->game->contains($game)) {
-            $this->game[] = $game;
-        }
-
-        return $this;
-    }
-
-    public function removeGame(Game $game): self
-    {
-        $this->game->removeElement($game);
 
         return $this;
     }

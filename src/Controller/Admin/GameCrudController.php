@@ -49,7 +49,7 @@ class GameCrudController extends AbstractCrudController
             ->setFormTypeOptions([
                 'by_reference' => false
             ]),
-            AssociationField::new('ballBoys')
+            AssociationField::new('ballBoysTeams')
             ->setFormTypeOptions([
                 'by_reference' => false
             ]),
