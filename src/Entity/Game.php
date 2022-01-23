@@ -380,9 +380,11 @@ class Game
     public function setTeamWinner(?Team $teamWinner): self
     {
         if (!$this->getIsDouble()){
-            throw new Exception ("Un match simple ne contient pas d'équipes'");
-        } else{
-        $this->teamWinner = $teamWinner;
+            throw new Exception ("Un match simple ne contient pas d'équipes");
+        } else if ($teamWinner->getId()==$this->teams[0]->getId() || $teamWinner->getId()==$this->teams[1]->getId()){
+            $this->teamWinner = $teamWinner;
+        } else {
+            throw new Exception ("le gagnant du match doit être un de ses participants");
         }
         return $this;
     }
@@ -397,9 +399,11 @@ class Game
     {
         if ($this->getIsDouble()){
             throw new Exception ("Un match double ne contient pas de joueurs seuls");
-        } else{
+        } else if ($playerWinner->getId()==$this->players[0]->getId() || $playerWinner->getId()==$this->players[1]->getId()) {
             $this->playerWinner = $playerWinner;
-        } 
+        }  else {
+            throw new Exception ("le gagnant du match doit être un de ses participants");
+        }
         return $this;
     }
 }
