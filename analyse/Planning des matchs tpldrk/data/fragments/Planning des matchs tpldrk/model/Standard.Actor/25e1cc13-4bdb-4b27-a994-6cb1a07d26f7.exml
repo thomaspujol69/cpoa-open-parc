@@ -94,7 +94,7 @@
           </ATTRIBUTES>
           <DEPENDENCIES>
             <LINK relation="Target">
-              <ID name="Répartir les ramasseurs de boules" mc="Standard.UseCase" uid="55518a84-3099-49e2-a98d-93376d2145c1"/>
+              <ID name="Répartir les ramasseurs de balles" mc="Standard.UseCase" uid="55518a84-3099-49e2-a98d-93376d2145c1"/>
             </LINK>
             <COMP relation="Opposite">
               <OBJECT>
@@ -198,7 +198,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="" mc="Standard.AssociationEnd" uid="e54e5c77-13f7-4ed0-8dcd-89459b60a9b4"/>
+          <ID name="" mc="Standard.AssociationEnd" uid="2e5c926e-e290-49cb-94e9-abfd38c6eec9"/>
           <ATTRIBUTES>
             <ATT name="Aggregation">KindIsAssociation</ATT>
             <ATT name="IsChangeable">true</ATT>
@@ -216,11 +216,11 @@
           </ATTRIBUTES>
           <DEPENDENCIES>
             <LINK relation="Target">
-              <ID name="Gérer les réservations de créneaux pour les entrainements" mc="Standard.UseCase" uid="a141c86e-37eb-4bc3-8e01-a852ea296755"/>
+              <ID name="Rentrer les scores" mc="Standard.UseCase" uid="8378b6d6-52d8-4ebb-90de-ca9e0d2203e3"/>
             </LINK>
             <COMP relation="Opposite">
               <OBJECT>
-                <ID name="" mc="Standard.AssociationEnd" uid="7d8b5843-be59-4dcb-981d-68aae4b8f173"/>
+                <ID name="" mc="Standard.AssociationEnd" uid="7f45089a-6e2c-43f8-9f3a-7c75aa29e783"/>
                 <ATTRIBUTES>
                   <ATT name="Aggregation">KindIsAssociation</ATT>
                   <ATT name="IsChangeable">true</ATT>
@@ -238,11 +238,11 @@
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <COMP relation="Opposite">
-                    <COMPID name="" mc="Standard.AssociationEnd" uid="e54e5c77-13f7-4ed0-8dcd-89459b60a9b4"/>
+                    <COMPID name="" mc="Standard.AssociationEnd" uid="2e5c926e-e290-49cb-94e9-abfd38c6eec9"/>
                   </COMP>
                   <COMP relation="Association">
                     <OBJECT>
-                      <ID name="" mc="Standard.Association" uid="6551760b-1ac2-413f-a0f7-ee9237c5f335"/>
+                      <ID name="" mc="Standard.Association" uid="80cdeb8d-f17b-4838-8ce3-d54956cd004a"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -254,7 +254,7 @@
               </OBJECT>
             </COMP>
             <COMP relation="Association">
-              <COMPID name="" mc="Standard.Association" uid="6551760b-1ac2-413f-a0f7-ee9237c5f335"/>
+              <COMPID name="" mc="Standard.Association" uid="80cdeb8d-f17b-4838-8ce3-d54956cd004a"/>
             </COMP>
           </DEPENDENCIES>
         </OBJECT>

@@ -13,6 +13,10 @@
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Activity" mc="Standard.Activity" uid="94e8ca85-17b7-4692-8fd8-e3af22fc5780"/>
+        <COMPID name="Activity1" mc="Standard.Activity" uid="02015898-ffd3-4ba6-b4db-fc360ede7e62"/>
+      </COMP>
       <COMP relation="OwnedElement">
         <COMPID name="Court" mc="Standard.Class" uid="c1b73e56-a2b3-4e84-a128-ae5f05b80783"/>
         <COMPID name="Arbitrator" mc="Standard.Class" uid="a67a7358-82dc-4552-b043-fd2a6f6db4a5"/>
@@ -26,14 +30,26 @@
         <COMPID name="Admin" mc="Standard.Actor" uid="25e1cc13-4bdb-4b27-a994-6cb1a07d26f7"/>
         <COMPID name="Répartir arbitres" mc="Standard.UseCase" uid="91ebff5f-cd1f-4dd1-b7c8-72be289399b7"/>
         <COMPID name="Affecter les courts" mc="Standard.UseCase" uid="bd84480e-990c-4397-9b02-b15607e91ef8"/>
-        <COMPID name="Gérer les réservations de créneaux pour les entrainements" mc="Standard.UseCase" uid="a141c86e-37eb-4bc3-8e01-a852ea296755"/>
-        <COMPID name="Répartir les ramasseurs de boules" mc="Standard.UseCase" uid="55518a84-3099-49e2-a98d-93376d2145c1"/>
-        <COMPID name="Réserver une séance d'entrainement" mc="Standard.UseCase" uid="9bad228f-d0c7-46db-8c30-f0ade299ec50"/>
+        <COMPID name="Répartir les ramasseurs de balles" mc="Standard.UseCase" uid="55518a84-3099-49e2-a98d-93376d2145c1"/>
+        <COMPID name="Réserver un court pour une séance d'entrainement" mc="Standard.UseCase" uid="9bad228f-d0c7-46db-8c30-f0ade299ec50"/>
         <COMPID name="Joueur" mc="Standard.Actor" uid="42f339f7-917d-4848-94bc-2fe694a7aa4d"/>
+        <COMPID name="Billeterie" mc="Standard.Package" uid="3352ae21-d8e3-4eef-aee8-6166ac1ed896"/>
+        <COMPID name="Matchs" mc="Standard.Package" uid="9cbb1d14-f549-4fad-b629-db27c585bb3c"/>
+        <COMPID name="Équipe organisation" mc="Standard.Package" uid="a1ebab2f-7d77-4671-8632-aacb78853948"/>
+        <COMPID name="Participants" mc="Standard.Package" uid="140f043f-728f-4e72-aad1-f0eb335d27d9"/>
+        <COMPID name="Réservations" mc="Standard.Package" uid="1cbcaa4b-0bdd-4828-9637-64b3a4fdd449"/>
+        <COMPID name="BallBoyTeam" mc="Standard.Class" uid="95687328-2474-49f9-80b0-368f8acb43d0"/>
+        <COMPID name="Gérer les équipes et les joueurs" mc="Standard.UseCase" uid="a8bcaa3c-d002-4d2c-83ea-72c62dd21fec"/>
+        <COMPID name="Planifier les matchs" mc="Standard.UseCase" uid="d8e4ef8e-04c2-4361-baf5-e8c66bb85fe9"/>
+        <COMPID name="Rentrer les scores" mc="Standard.UseCase" uid="8378b6d6-52d8-4ebb-90de-ca9e0d2203e3"/>
+        <COMPID name="Vérifier la disponibilité d'un terrain" mc="Standard.UseCase" uid="a9e04ea2-52ef-41af-bf56-d3240ed82cc9"/>
+        <COMPID name="s'authentifier" mc="Standard.UseCase" uid="c631d335-c264-48d6-8109-bd6415f2371a"/>
       </COMP>
       <COMP relation="Product">
         <COMPID name="Diagramme de classe planning des matchs tpldrk" mc="Standard.ClassDiagram" uid="f3a7a6e0-4190-447d-9a20-4dc98b23dc4f"/>
         <COMPID name="Diagramme de cas d'utilisation planning matchs" mc="Standard.UseCaseDiagram" uid="e587026e-f3e0-47f5-9dcc-a0ce00e111a3"/>
+        <COMPID name="planning des matchs tpldrk (PackageContentStructureDiagramTemplate)" mc="Standard.ClassDiagram" uid="b10c488d-7cda-4bdb-b735-f1af9f026254"/>
+        <COMPID name="planning des matchs tpldrk (SubPackageStructureDiagramTemplate)" mc="Standard.ClassDiagram" uid="7e8e7b61-1429-4d9c-8e49-90c73e7d594f"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>

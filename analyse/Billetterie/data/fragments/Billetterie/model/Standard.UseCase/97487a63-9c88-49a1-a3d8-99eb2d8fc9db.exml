@@ -1,38 +1,66 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Gérer les réservations de créneaux pour les entrainements" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Entrer un code promotionnel" version="4">
   <OBJECT>
-    <ID name="Gérer les réservations de créneaux pour les entrainements" mc="Standard.UseCase" uid="a141c86e-37eb-4bc3-8e01-a852ea296755"/>
-    <PID name="planning des matchs tpldrk" mc="Standard.Package" uid="8cd7c366-0352-4be2-8254-45524923f289"/>
+    <ID name="Entrer un code promotionnel" mc="Standard.UseCase" uid="97487a63-9c88-49a1-a3d8-99eb2d8fc9db"/>
+    <PID name="billetterie" mc="Standard.Package" uid="b11611a0-c17b-4dd3-b1fc-ffd3d8de539d"/>
     <ATTRIBUTES>
       <ATT name="IsElementary">false</ATT>
       <ATT name="IsAbstract">false</ATT>
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[Gérer les réservations de créneaux pour les entrainements]]></ATT>
+      <ATT name="Name"><![CDATA[Entrer un code promotionnel]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
       <COMP relation="Used">
         <OBJECT>
-          <ID name="UseCaseDependency" mc="Standard.UseCaseDependency" uid="e5bb3c73-8dcf-4b3f-99cf-1997a1b653c0"/>
+          <ID name="UseCaseDependency" mc="Standard.UseCaseDependency" uid="a922b865-f177-4f6d-80c3-60138aeca09e"/>
           <ATTRIBUTES>
             <ATT name="Name"><![CDATA[UseCaseDependency]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
             <LINK relation="Target">
-              <ID name="Réserver une séance d'entrainement" mc="Standard.UseCase" uid="9bad228f-d0c7-46db-8c30-f0ade299ec50"/>
+              <ID name="Choisir le type de billet" mc="Standard.UseCase" uid="7d660d32-30cb-4011-820f-4ad33700431b"/>
             </LINK>
             <LINK relation="Extension">
-              <FOREIGNID name="include" mc="Infrastructure.Stereotype" uid="00000000-0000-9c49-0000-000000000000"/>
+              <FOREIGNID name="extend" mc="Infrastructure.Stereotype" uid="00000000-0000-9c48-0000-000000000000"/>
             </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="5bd63ebd-fb27-4a37-9133-9eb49e686777"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[<<Extend>> | Extension point : le type de ticket souhaité correspond à un ticket en promotion
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
           </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedExtension">
+        <OBJECT>
+          <ID name="Le type choisi est en promotion" mc="Standard.ExtensionPoint" uid="399a73b2-df3e-445a-8eab-20adad0495bb"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[Le type choisi est en promotion]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
         </OBJECT>
       </COMP>
       <COMP relation="Descriptor">
         <OBJECT>
-          <ID name="" mc="Infrastructure.Note" uid="7a9745e7-3a65-4be7-82ca-c736989ad7c8"/>
+          <ID name="" mc="Infrastructure.Note" uid="f36e001b-6395-47cf-ab7b-19ca97102829"/>
           <ATTRIBUTES>
             <ATT name="Content"><![CDATA[...]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -46,7 +74,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="" mc="Infrastructure.Note" uid="1818807d-f3cb-4184-b796-6bc5cd489e64"/>
+          <ID name="" mc="Infrastructure.Note" uid="cc116c05-24cf-49af-bc8a-e08c72a6f0ee"/>
           <ATTRIBUTES>
             <ATT name="Content"><![CDATA[...]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -60,7 +88,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="" mc="Infrastructure.Note" uid="a83b15b1-be9c-4192-a3df-db1490c5eedc"/>
+          <ID name="" mc="Infrastructure.Note" uid="ebb26174-f6ee-41fe-bda4-d0df436b72b1"/>
           <ATTRIBUTES>
             <ATT name="Content"><![CDATA[...]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -74,7 +102,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="" mc="Infrastructure.Note" uid="176dcf7b-1ff4-43aa-b851-e1cf0ad3421d"/>
+          <ID name="" mc="Infrastructure.Note" uid="8aa01cc4-7d59-4e47-a976-5625fa261de1"/>
           <ATTRIBUTES>
             <ATT name="Content"><![CDATA[...]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -88,7 +116,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="" mc="Infrastructure.Note" uid="5fba341a-5549-4ac3-8fd6-8ad857f429c4"/>
+          <ID name="" mc="Infrastructure.Note" uid="1ed8292f-1c99-4b0c-ac68-286dbdd47261"/>
           <ATTRIBUTES>
             <ATT name="Content"><![CDATA[...]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -102,7 +130,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="" mc="Infrastructure.Note" uid="ee1c46b1-050f-45e4-b161-2632a4eebe70"/>
+          <ID name="" mc="Infrastructure.Note" uid="c1977d0a-fcef-4e0f-a249-9579d0e3b95e"/>
           <ATTRIBUTES>
             <ATT name="Content"><![CDATA[...]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>

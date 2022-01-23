@@ -1,6 +1,10 @@
-#Tue Jan 18 09:42:41 CET 2022
->>>>>>>=fd5d4f4303025aaf2729860205203f659a364056
+#Sun Jan 23 01:07:49 CET 2022
+org.modelio.app.diagram.editor.OpenedDiagrams4='activit\u00E9 r\u00E9partir arbitres' {fd99f81c-5a8c-4a95-80d6-0fc43c95ea34} Standard.ActivityDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams3='planning des matchs tpldrk (SubPackageStructureDiagramTemplate)' {7e8e7b61-1429-4d9c-8e49-90c73e7d594f} Standard.ClassDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams2='planning des matchs tpldrk (PackageContentStructureDiagramTemplate)' {b10c488d-7cda-4bdb-b735-f1af9f026254} Standard.ClassDiagram
 org.modelio.app.diagram.editor.OpenedDiagrams1='Diagramme de cas d'utilisation planning matchs' {e587026e-f3e0-47f5-9dcc-a0ce00e111a3} Standard.UseCaseDiagram
 org.modelio.app.diagram.editor.OpenedDiagrams0='Diagramme de classe planning des matchs tpldrk' {f3a7a6e0-4190-447d-9a20-4dc98b23dc4f} Standard.ClassDiagram
+>>>>>>>=fd5d4f4303025aaf2729860205203f659a364056
 <<<<<<<=HEAD
+org.modelio.app.diagram.editor.OpenedDiagrams5='activit\u00E9 ajouter \u00E9quipe' {8711d2ce-a22d-4e07-a2dc-8261820b9485} Standard.ActivityDiagram
 =\=\=\=\=\=\=
