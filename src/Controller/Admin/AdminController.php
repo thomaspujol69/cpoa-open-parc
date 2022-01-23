@@ -54,7 +54,7 @@ class AdminController extends AbstractDashboardController
             MenuItem::section('Tennis'),
             MenuItem::linkToCrud('Arbitrators', 'fas fa-flag', Arbitrator::class),
             MenuItem::linkToCrud('Ballboys', 'fas fa-baseball-ball', BallBoy::class),
-            MenuItem::linkToCrud('BallBoys Teams', 'fas fa-percentage', BallBoysTeam::class),
+            MenuItem::linkToCrud('BallBoys Teams', 'fas fa-user-friends', BallBoysTeam::class),
             MenuItem::linkToCrud('Bookings', 'fas fa-book', Booking::class),
             MenuItem::linkToCrud('Courts', 'far fa-map', Court::class),
             MenuItem::linkToCrud('Players', 'fas fa-running', Player::class),
