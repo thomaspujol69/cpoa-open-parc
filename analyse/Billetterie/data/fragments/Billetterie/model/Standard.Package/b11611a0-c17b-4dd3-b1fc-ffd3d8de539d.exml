@@ -13,6 +13,11 @@
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Activity" mc="Standard.Activity" uid="530a0fb8-59f2-40ef-a6dc-e9028f79f1bb"/>
+        <COMPID name="Activity1" mc="Standard.Activity" uid="229fca61-5ece-46d9-a074-94ec53ee4078"/>
+        <COMPID name="Activity2" mc="Standard.Activity" uid="21b6246a-4ea6-444b-b597-68c73d950934"/>
+      </COMP>
       <COMP relation="OwnedElement">
         <COMPID name="User" mc="Standard.Class" uid="01cad163-5d92-4d52-b813-8505c169e909"/>
         <COMPID name="Match" mc="Standard.Class" uid="be482d8a-b289-4049-a6e8-0688825c4335"/>
@@ -27,6 +32,11 @@
         <COMPID name="Consulter les jours" mc="Standard.UseCase" uid="9b54ee76-4b75-40f0-9ed2-41528b7d9084"/>
         <COMPID name="Choisir le type de billet" mc="Standard.UseCase" uid="7d660d32-30cb-4011-820f-4ad33700431b"/>
         <COMPID name="Consulter les tarifs" mc="Standard.UseCase" uid="bf51b579-d834-441e-adcd-727fd1afe5a8"/>
+        <COMPID name="Administrator" mc="Standard.Actor" uid="83b95232-a704-4fd4-8175-3183baab0c55"/>
+        <COMPID name="Créer un code promotionnel" mc="Standard.UseCase" uid="cc4feeb2-77e5-4a8a-b242-0d02f90153fd"/>
+        <COMPID name="Entrer un code promotionnel" mc="Standard.UseCase" uid="97487a63-9c88-49a1-a3d8-99eb2d8fc9db"/>
+        <COMPID name="Vérifier le nombre de tickets restants" mc="Standard.UseCase" uid="02bbeb99-505d-44ba-9e9f-66a0ee8be09c"/>
+        <COMPID name="Gérer les types de tickets" mc="Standard.UseCase" uid="9a569a4c-31ea-43db-b999-1591bbff823f"/>
       </COMP>
       <COMP relation="Product">
         <COMPID name="Diagramme de classe billetterie" mc="Standard.ClassDiagram" uid="03980c76-230c-4fcd-bc63-17d973148f05"/>
