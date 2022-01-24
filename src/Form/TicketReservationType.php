@@ -17,10 +17,13 @@ class TicketReservationType extends AbstractType
     {
         $builder
             ->add('quantity', IntegerType::class, array(
-                    'mapped' => false,
-                    'attr' => array('value' => 1, 'min' => 1, 'max' => 50)
-                ))
-            ->add('promoCode', TextType::class, [])
+                'label' => 'Quantité',
+                'mapped' => false,
+                'attr' => array('value' => 1, 'min' => 1, 'max' => 50)
+            ))
+            ->add('promoCode', TextType::class, [
+                'label' => 'Code promo'
+            ])
             ->add('ticketType', CheckboxType::class, array(
                 'label' => 'Catégorie 1'
             ))

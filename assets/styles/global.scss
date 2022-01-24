@@ -130,22 +130,6 @@ body{
         font-weight: normal !important;
         text-transform: none !important;
     }
-
-    #registration_form_email{
-        margin-left: 44px;
-    }
-
-    #registration_form_plainPassword{
-        margin-left: 15px;
-    }
-
-    #registration_form_firstName{
-        margin-left: 8px;
-    }
-
-    #registration_form_lastName{
-        margin-left: 10px;
-    }
 }
 
 #register_form {
@@ -257,9 +241,6 @@ form[name="ticket_reservation"]{
     #ticket_reservation_promoCode{
         width: 10em;
     }
-    .ticket_reservation label {
-        width: 7em;
-    }
     .switch {
         position: relative;
         display: inline-block;
@@ -333,7 +314,9 @@ form[name="ticket_reservation"]{
         background-color : $lightprimary;
     }
 }
-
+form div div label {
+    width: 7em;
+}
 #ticketing{
     display :flex;
     flex-wrap: wrap;
