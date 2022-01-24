@@ -5,10 +5,24 @@
 
 {% block main %}
 <div class="content">
+    <style>
+        .nothover{
+            display:None;
+        }
+        .imghover{
+            width: 100%;
+        }
+        .nothover:hover{
+            display: inline;
+        }
+        .imghover:hover{
+            display:none;
+        }
+    </style>
     <p>Ici, vous pouvez créer, modifier et supprimer des entités </p>
     <p>Utilisez la barre de navigation sur le côté pour accéder aux entités.</p>
     <p>Si vous ne comprenez pas le fonctionnement de notre interface, vous pouvez vous rendre sur ce <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">tutoriel</a>.</p>
     <p>Bonne administration à vous !</p>
-    <img src="img/Thomas.jpg"/>
+    <div class="imghover"><img src="img/Thomas.jpg"/><span class="nothover"><img src="img/Lucas.png"/></span></div>
 </div>
 {% endblock %}
