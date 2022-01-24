@@ -4,38 +4,33 @@
 
 {% block body %}
 {% include 'common/header.html' %}
-    <h1>User</h1>
+
+<div class="container">
+    <h1>Mon compte</h1>
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ user.id }}</td>
-            </tr>
             <tr>
                 <th>Email</th>
                 <td>{{ user.email }}</td>
             </tr>
             <tr>
-                <th>Roles</th>
+                <th>Rôles</th>
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
             </tr>
             <tr>
-                <th>IsVerified</th>
-                <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
+                <th>Email vérifié</th>
+                <td>{{ user.isVerified ? '✅' : '❌' }}</td>
             </tr>
             <tr>
-                <th>FirstName</th>
-                <td>{{ user.firstName }}</td>
-            </tr>
-            <tr>
-                <th>LastName</th>
-                <td>{{ user.lastName }}</td>
+                <th>Dénomination</th>
+                <td>{{ user.firstName }} {{ user.lastName }}</td>
             </tr>
         </tbody>
     </table>
-    <a href="{{ path('account_edit', {'id': user.id}) }}">edit</a>
+    <a class="btn btn-light" href="{{ path('account_edit', {'id': user.id}) }}">Mettre à jour</a>
 
     {{ include('account/_delete_form.html.twig') }}
+</div>
 {% include 'common/footer.html' %}
 {% endblock %}

@@ -6,13 +6,12 @@
 {% include 'common/header.html' %}
     <div class="pt-5 pb-5 mb-5 border dim500 center">
         <div id="register_form">
-            <h1>Modifier ses informations</h1>
+            <h1>Mettre à jour mon compte</h1>
 
             {{ include('account/_form.html.twig', {'button_label': 'Update'}) }}
 
-            <a href="{{ path('account_show') }}">Retour à mon compte</a>
-
-            {{ include('account/_delete_form.html.twig') }}
+            <br>
+            <a class="ml-auto fit mr-auto d-block btn btn-light" href="{{ path('account_show') }}">Retour à mon compte</a>
         </div>
     </div>
 {% include 'common/footer.html' %}

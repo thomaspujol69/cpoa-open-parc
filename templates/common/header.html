@@ -31,6 +31,9 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ path('account_show') }}">Mon compte</a>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a class="dropdown-item" href="{{ path('admin') }}">Administration</a>
+                        {% endif %}
                         <!--a class="dropdown-item" href="/register">S'identifier</a-->
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/logout">Se déconnecter</a>

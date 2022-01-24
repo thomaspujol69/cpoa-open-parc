@@ -395,8 +395,12 @@ form[name="ticket_reservation"]{
         transform: translateY(-30px);
     }
 }
-
-
+#delete_form{
+    display:inline;
+}
+.fit{
+    width:fit-content;
+}
 
 @import "./bootstrap.min.css";
 @import "~bootstrap/scss/bootstrap";
