@@ -21,6 +21,7 @@ class GameCrudController extends AbstractCrudController
         return [
             Field::new('isFinal'),
             Field::new('isDouble'),
+            Field::new('isWomen'),
             AssociationField::new('day')
                 ->setFormTypeOptions([
                     'by_reference' => true

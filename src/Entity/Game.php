@@ -91,6 +91,11 @@ class Game
      */
     private $playerWinner;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isWomen;
+
     public function __construct()
     {
         $this->lineArbitrators = new ArrayCollection();
@@ -256,7 +261,13 @@ class Game
 
     public function addPlayer(Player $player): self
     {
-        if ($this->getIsDouble()){
+        if (count($this->getPlayers())>1){
+            throw new Exception ("Un match ne peut voir s'affronter que deux joueurs");
+        } else if (!$this->getIsWomen() && $player->getIsWomen()){
+            throw new Exception ("Un match masculin ne peut pas admettre de femmes");
+        } else if ($this->getIsWomen()&& !$player->getIsWomen()){
+            throw new Exception ("Un match féminin ne peut pas admettre d'hommes");
+        } else if ($this->getIsDouble()){
             throw new Exception ("Un match double ne contient pas de joueurs seuls");
         } else{
             if (!$this->players->contains($player)) {
@@ -303,7 +314,13 @@ class Game
 
     public function addTeam(Team $team): self
     {
-        if ((!$this->getIsDouble())){
+        if (count($this->getTeams())>1){
+            throw new Exception ("Un match ne peut voir s'affronter que deux équipes");
+        } else if (!$this->getIsWomen() && $team->getIsWomen()){
+            throw new Exception ("Un match masculin ne peut pas admettre d'équipe féminine");
+        } else if ($this->getIsWomen()&& !$team->getIsWomen()){
+            throw new Exception ("Un match féminin ne peut pas admettre d'équipe masculine");
+        } else if ((!$this->getIsDouble())){
             throw new Exception ("Impossible de mettre une équipe dans un match simple");           
         } else {
             if (count($this->getTeams())<2){
@@ -404,6 +421,18 @@ class Game
         }  else {
             throw new Exception ("le gagnant du match doit être un de ses participants");
         }
+        return $this;
+    }
+
+    public function getIsWomen(): ?bool
+    {
+        return $this->isWomen;
+    }
+
+    public function setIsWomen(bool $isWomen): self
+    {
+        $this->isWomen = $isWomen;
+
         return $this;
     }
 }
