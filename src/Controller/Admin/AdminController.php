@@ -49,22 +49,22 @@ class AdminController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         return[
-            MenuItem::linktoRoute('Back to the website', 'fas fa-home', 'index'),
+            MenuItem::linktoRoute('Retourner au site', 'fas fa-home', 'index'),
             MenuItem::section('Tennis'),
-            MenuItem::linkToCrud('Arbitrators', 'fas fa-flag', Arbitrator::class),
-            MenuItem::linkToCrud('Ballboys', 'fas fa-baseball-ball', BallBoy::class),
-            MenuItem::linkToCrud('BallBoys Teams', 'fas fa-user-friends', BallBoysTeam::class),
-            MenuItem::linkToCrud('Bookings', 'fas fa-book', Booking::class),
-            MenuItem::linkToCrud('Courts', 'far fa-map', Court::class),
-            MenuItem::linkToCrud('Players', 'fas fa-running', Player::class),
-            MenuItem::linkToCrud('Teams', 'fas fa-users', Team::class),
-            MenuItem::linkToCrud('Games', 'fas fa-trophy', Game::class),
-            MenuItem::linkToCrud('Days', 'fas fa-users', Day::class),
+            MenuItem::linkToCrud('Arbitres', 'fas fa-flag', Arbitrator::class),
+            MenuItem::linkToCrud('Ramasseurs de Balles', 'fas fa-baseball-ball', BallBoy::class),
+            MenuItem::linkToCrud('Équipes de Ramasseurs de Balles', 'fas fa-user-friends', BallBoysTeam::class),
+            MenuItem::linkToCrud('Réservations', 'fas fa-book', Booking::class),
+            MenuItem::linkToCrud('Terrains', 'far fa-map', Court::class),
+            MenuItem::linkToCrud('Joueurs', 'fas fa-running', Player::class),
+            MenuItem::linkToCrud('Équipes', 'fas fa-users', Team::class),
+            MenuItem::linkToCrud('Matchs', 'fas fa-trophy', Game::class),
+            MenuItem::linkToCrud('Jours', 'fas fa-users', Day::class),
             MenuItem::section('Reservation'),
-            MenuItem::linkToCrud('Users', 'fas fa-user', User::class),
+            MenuItem::linkToCrud('Utilisateurs', 'fas fa-user', User::class),
             MenuItem::linkToCrud('Tickets', 'fas fa-ticket-alt', Ticket::class),
-            MenuItem::linkToCrud('Ticket Types', 'fas fa-clipboard-list', TicketType::class),
-            MenuItem::linkToCrud('Promo Codes', 'fas fa-percentage', PromoCode::class)
+            MenuItem::linkToCrud('Types de Tickets', 'fas fa-clipboard-list', TicketType::class),
+            MenuItem::linkToCrud('Codes Promo', 'fas fa-percentage', PromoCode::class)
         ];
     }
 }
