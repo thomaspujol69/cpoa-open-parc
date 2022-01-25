@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
+use App\Repository\TicketRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,14 +17,16 @@ use Symfony\Component\HttpFoundation\Session\Session;
 class AccountController extends AbstractController
 {
     #[Route('/', name: 'account_show', methods: ['GET'])]
-    public function index(UserRepository $userRepository): Response
+    public function index(UserRepository $userRepository, TicketRepository $tRep): Response
     {
         $user = $this->getUser();
         if(!$user){
             return $this->redirectToRoute('app_login');
         }
+        $t = $tRep->findByUser($user);
         return $this->render('account/show.html.twig', [
             'user' => $user,
+            'tickets' => $t
         ]);
     }
 

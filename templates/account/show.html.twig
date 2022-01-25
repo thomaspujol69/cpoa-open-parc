@@ -31,6 +31,26 @@
     <a class="btn btn-light" href="{{ path('account_edit', {'id': user.id}) }}">Mettre à jour</a>
 
     {{ include('account/_delete_form.html.twig') }}
+
+    <h1>Mes places</h1>
+    <table style="border: 1px solid white;  !important;">
+        <thead style="border: 1px solid white;  !important;">
+            <th>ID</th>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Code promo</th>
+        </thead>
+        <tbody>
+    {% for t in tickets %}
+        <tr style="border: 1px solid white;  !important;">
+            <td>{{t.id}}</td>
+            <td>{{ t.date|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY")|capitalize }}</td>
+            <td>{{ (t.ticketType) ? t.ticketType: 'Aucun' }}</td>
+            <td>{{ (t.promoCode) ? t.promoCode : 'Aucun' }}</td>
+        </tr>
+    {% endfor %}
+        </tbody>
+    </table>
 </div>
 {% include 'common/footer.html' %}
 {% endblock %}
