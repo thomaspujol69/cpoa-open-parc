@@ -62,11 +62,7 @@ class Booking
 
     public function setHourBooking(string $hourBooking): self
     {
-        if ($hourBooking!="10h" && $hourBooking!="12h" && $hourBooking!="14h" && $hourBooking!="16h"){
-            throw new Exception ("L'horaire doit être : 10h, 12h, 14h ou 16h");
-        } else {
             $this->hourBooking = $hourBooking;
-        }
 
         return $this;
     }
